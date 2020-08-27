@@ -1,13 +1,147 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header{
+  margin: 0 auto;
+  width: 95%; 
+  background-image: url("https://images.pexels.com/photos/3049057/pexels-photo-3049057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: bottom; 
+   border-radius: 5px;;
+   height: 30rem;  
+   text-align: left; 
+  }
+
+header h1 {
+  position: relative;
+  top: 1rem;
+  left: 2rem;
+  color: rgb(245, 240, 240);
+  font-size: 5rem;
+}
+
+ul {
+  list-style-type: none;
+  
+}
+
+li {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+  color: inherit;
+  transition: 200ms;
+  transition-property: all;
+}
+
+.contacts a {
+  font-size: 2rem;
+  text-decoration: none;
+}
+a:hover {
+  
+  text-decoration: underline;
+  
+}
+
+
+footer {
+  display: flex;
+  
+  justify-content: space-around;
+  
+}
+
+#display-recipe {  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  min-height: 600px;
+  
+}
+#choose-bird {
+  min-height: 600px;
+  padding-top: 3rem;
+}
+
+h2 {
+  font-size: 5rem;
+  margin: 2rem auto;
+}
+
+.recipe-card {
+   border: 4px solid black;
+   border-radius: 5px;
+   background-color: rgb(245, 240, 240) ;
+   padding: 10px;
+   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: 300ms;
+  /*position: absolute;
+  z-index: 3;*/
+  
+}
+.recipe-card img { 
+   width: 200px;
+   margin: 0 auto;
+}
+.recipe-card p {
+   font-size: 1rem;
+}
+
+.closed-recipe-card {
+  width: 250px;
+  height: 300px;
+  white-space: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;  
+  position: static;
+  z-index: 0; 
+}
+.closed-recipe-card img {
+  width:250px;
+}
+
+.closed-recipe-card:hover {
+  scale: .97;
+}
+
+.open-recipe-card {
+  height: auto;
+  width: auto; 
+}
+
+#recipe-btn-container{
+   display: flex;
+   justify-content: space-evenly;
+   transition: 300ms;
+}
+
+#recipe-btn-container button {
+  border: 4px solid black;
+  background-color: rgb(245, 240, 240);
+  width: 175px;
+  height: 50px;
+  font-size: 1.5rem;
+  transition: 300ms;
+  margin: 0 1rem;
+}
+
+#recipe-btn-container button:hover {
+  background-color: black;
+   color: white;
 }
