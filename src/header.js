@@ -12,7 +12,7 @@ const Header = () => {
                 <li> <a href="recipes.html">Recipes</a></li>
                 <li> <a href="about.html">About</a></li>
                 <li><a href="contacts.html">Contact</a></li>
-                <li><input type="search" placeholder="Search"/></li>
+                <li><input type="search" placeholder="Search"/><button>Search</button></li>
             </ul>
             
 
