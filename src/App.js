@@ -88,7 +88,7 @@ addItemToCart(event){
   if (event.currentTarget.parentNode.attributes['data-ingredient-id'] == undefined) {
     alert('Sorry, but that item is temporarily unavailable')
     
-    //offer something similar???
+    //offer something similar
   
     return
    } 
