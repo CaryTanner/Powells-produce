@@ -12,7 +12,7 @@ const Header = (props) => {
         
             <div>  
                 <header>
-                    <h1>Powell's <br /> Poultry</h1>
+                    <h1>Powell's <br /> Produce</h1>
                 </header>
                 
                     <nav>
