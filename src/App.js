@@ -89,7 +89,7 @@ addItemToCart(event){
     alert('Sorry, but that item is temporarily unavailable')
     
     //offer something similar
-  
+  // a new test
     return
    } 
 
