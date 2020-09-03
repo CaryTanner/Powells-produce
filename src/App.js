@@ -94,7 +94,7 @@ addItemToCart(event){
    } 
 
   let item = event.currentTarget.parentNode.attributes['cartItem'].value
-   let itemId = event.currentTarget.parentNode.attributes.['data-ingredient-id'].value
+   let itemId = event.currentTarget.parentNode.attributes['data-ingredient-id'].value
    
     if(this.state.cartItemsIds.includes(itemId)) { 
       alert('This item is already in your shopping cart')
