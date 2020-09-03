@@ -3,7 +3,20 @@ import Header from './header.js'
 import Footer from './footer.js'
 import Recipes from './recipes.js'
 import RecipeBtn from './recipeBtn.js'
-import {fetchRecipes} from './api.js'
+import {fetchRecipes, fetchById} from './api.js'
+import Home from './home.js'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faShoppingCart} from '@fortawesome/free-solid-svg-icons'
+library.add(faShoppingCart)
+
 
 
 
@@ -12,15 +25,18 @@ class App extends React.Component {
     super(props);
     this.state = {
       birdType: '',
-      recipeTitles: '' ,
+      recipeTitles: '',
       imgUrls: '',
       recipeIds: '',
       recipeIsOpen: false,
-      openRecipeId: ''
+      openRecipeId: '',
+      cartItems: [],
+      cartItemsIds: [],
     };
     this.chooseBird = this.chooseBird.bind(this)
     this.openRecipe = this.openRecipe.bind(this)
     this.closeExpandedRecipe = this.closeExpandedRecipe.bind(this)
+    this.addItemToCart = this.addItemToCart.bind(this)
   }
 
 chooseBird(event){
@@ -28,6 +44,9 @@ chooseBird(event){
    let titleArr = []
     let imgArr = []
     let idArr = [] 
+      this.setState((state) => ({
+                  birdType: bird,}))
+
    fetchRecipes(bird)
           .then(resp => (resp.results.forEach((index) => {
               titleArr.push(index.title)
@@ -44,38 +63,70 @@ chooseBird(event){
   }
 
 openRecipe(event){
-  let id = event.target.attributes['data-recipeId'].value
-  event.target.classList.add('open-recipe-card')
+  let id = event.currentTarget.attributes['data-recipeId'].value
+  if(this.state.recipeIsOpen) return
+  event.currentTarget.classList.add('open-recipe-card')
   this.setState((state)=>({
      recipeIsOpen: true,
      openRecipeId: id
     }))  
-  // fetchById(id)
-  //   .then(resp => console.log(resp))
+   
 }  
 
 
 
-closeExpandedRecipe(){
+closeExpandedRecipe(event){
+  let x = event.currentTarget
+  x.parentNode.classList.remove('open-recipe-card')
   this.setState((state)=>({
     recipeIsOpen: false,
-    
-   }))  
+    openRecipeId: " "
+    }))  
 }
   
+addItemToCart(event){
+  if (event.currentTarget.parentNode.attributes['data-ingredient-id'] == undefined) {
+    alert('Sorry, but that item is temporarily unavailable')
+    
+    //offer something similar??
+  
+    return
+   } 
+
+  let item = event.currentTarget.parentNode.attributes['cartItem'].value
+   let itemId = event.currentTarget.parentNode.attributes.['data-ingredient-id'].value
+   
+    if(this.state.cartItemsIds.includes(itemId)) { 
+      alert('This item is already in your shopping cart')
+      return} 
+
+    event.currentTarget.style.color = 'red'
+    this.setState((state)=>({
+        cartItems: [...this.state.cartItems, <li>{item}</li>],
+        cartItemsIds: [...this.state.cartItemsIds, itemId]
+        }))  
+
+  }
+
+
   render() {
     return (
-      <div className="App">
-        <Header />
-        <RecipeBtn clickAction={this.chooseBird} />
-        
-        <Recipes closeRecipe={this.closeExpandedRecipe} recipeIsOpen={this.state.recipeIsOpen} openRecipe={this.openRecipe} recipeIds={this.state.recipeIds} imgUrls={this.state.imgUrls} recipeTitles={this.state.recipeTitles} birdType={this.state.birdType} />
-      <div>bird: {this.state.birdType} </div>
-      <p>titles: {this.state.recipeTitles}</p>
-      <p>pics: {this.state.imgUrls}</p>
-      <p>ids: {this.state.recipeIds}</p>
-        <Footer />
-      </div>
+     <Router>
+          <div className="App">
+          <Header cartItems={this.state.cartItems}/>
+            
+              <Route exact path='/recipes'>
+                  <RecipeBtn clickAction={this.chooseBird} />
+                  <Recipes addItemToCart={this.addItemToCart} closeRecipe={this.closeExpandedRecipe} recipeIsOpen={this.state.recipeIsOpen} openRecipe={this.openRecipe} recipeIds={this.state.recipeIds} imgUrls={this.state.imgUrls} recipeTitles={this.state.recipeTitles} birdType={this.state.birdType} />
+              </Route>
+              <Route exact path='/home'>
+                <Home />
+              </Route>
+            
+          <Footer />
+            
+          </div>
+    </Router> 
     );
   }
 }

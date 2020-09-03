@@ -1,58 +1,66 @@
 import React from 'react'
 import { fetchById } from './api';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-// const IngredientList = (ingredient) => {
-//     return <li key={ingredient.name.toString()}>🥘 {ingredient.name} ({ingredient.measures.metric.amount} {ingredient.measures.metric.unitShort})</li>
-// }
+
+//  const fakeRecipe =  {"vegetarian":false,"vegan":false,"glutenFree":true,"dairyFree":true,"veryHealthy":false,"cheap":false,"veryPopular":false,"sustainable":false,"weightWatcherSmartPoints":14,"gaps":"no","lowFodmap":false,"preparationMinutes":40,"cookingMinutes":10,"aggregateLikes":0,"spoonacularScore":73.0,"healthScore":40.0,"creditsText":"Food and Wine","sourceName":"Food and Wine","pricePerServing":443.57,"extendedIngredients":[{"id":12061,"aisle":"Nuts","image":"almonds.jpg","consistency":"solid","name":"almonds","original":"1 cup plus 2 tablespoons marcona almonds (5 1/2 ounces)","originalString":"1 cup plus 2 tablespoons marcona almonds (5 1/2 ounces)","originalName":"marcona almonds (5 1/2 ounces)","amount":1.0,"unit":"cup","meta":["()"],"metaInformation":["()"],"measures":{"us":{"amount":1.0,"unitShort":"cup","unitLong":"cup"},"metric":{"amount":236.588,"unitShort":"ml","unitLong":"milliliters"}}},{"id":98912,"aisle":"Meat","image":"duck-breast.png","consistency":"solid","name":"duck breasts","original":"2 moulard duck breasts (1 1/2 pounds total), fat trimmed and skin scored in a crosshatch pattern","originalString":"2 moulard duck breasts (1 1/2 pounds total), fat trimmed and skin scored in a crosshatch pattern","originalName":"moulard duck breasts (1 1/2 pounds total), fat trimmed and skin scored in a crosshatch pattern","amount":2.0,"unit":"","meta":["fat trimmed"],"metaInformation":["fat trimmed"],"measures":{"us":{"amount":2.0,"unitShort":"","unitLong":""},"metric":{"amount":2.0,"unitShort":"","unitLong":""}}},{"id":11215,"aisle":"Produce","image":"garlic.png","consistency":"solid","name":"garlic clove","original":"1 garlic clove, minced","originalString":"1 garlic clove, minced","originalName":"garlic clove, minced","amount":1.0,"unit":"","meta":["minced"],"metaInformation":["minced"],"measures":{"us":{"amount":1.0,"unitShort":"","unitLong":""},"metric":{"amount":1.0,"unitShort":"","unitLong":""}}},{"id":19296,"aisle":"Nut butters, Jams, and Honey","image":"honey.png","consistency":"liquid","name":"honey","original":"1 tablespoon honey","originalString":"1 tablespoon honey","originalName":"honey","amount":1.0,"unit":"tablespoon","meta":[],"metaInformation":[],"measures":{"us":{"amount":1.0,"unitShort":"Tbsp","unitLong":"Tbsp"},"metric":{"amount":1.0,"unitShort":"Tbsp","unitLong":"Tbsp"}}},{"id":1082047,"aisle":"Spices and Seasonings","image":"salt.jpg","consistency":"solid","name":"kosher salt","original":"Kosher salt","originalString":"Kosher salt","originalName":"Kosher salt","amount":4.0,"unit":"servings","meta":[],"metaInformation":[],"measures":{"us":{"amount":4.0,"unitShort":"servings","unitLong":"servings"},"metric":{"amount":4.0,"unitShort":"servings","unitLong":"servings"}}},{"id":16112,"aisle":"Ethnic Foods","image":"miso.jpg","consistency":"solid","name":"Miso Soybean Paste","original":"3 tablespoons white miso paste","originalString":"3 tablespoons white miso paste","originalName":"white miso paste","amount":3.0,"unit":"tablespoons","meta":["white"],"metaInformation":["white"],"measures":{"us":{"amount":3.0,"unitShort":"Tbsps","unitLong":"Tbsps"},"metric":{"amount":3.0,"unitShort":"Tbsps","unitLong":"Tbsps"}}},{"id":4053,"aisle":"Oil, Vinegar, Salad Dressing","image":"olive-oil.jpg","consistency":"liquid","name":"olive oil","original":"3 1/2 tablespoons extra-virgin olive oil","originalString":"3 1/2 tablespoons extra-virgin olive oil","originalName":"extra-virgin olive oil","amount":3.5,"unit":"tablespoons","meta":["extra-virgin"],"metaInformation":["extra-virgin"],"measures":{"us":{"amount":3.5,"unitShort":"Tbsps","unitLong":"Tbsps"},"metric":{"amount":3.5,"unitShort":"Tbsps","unitLong":"Tbsps"}}},{"id":14412,"aisle":"Beverages","image":"water.png","consistency":"liquid","name":"water","original":"1/4 cup plus 1 tablespoon water","originalString":"1/4 cup plus 1 tablespoon water","originalName":"water","amount":0.25,"unit":"cup","meta":[],"metaInformation":[],"measures":{"us":{"amount":0.25,"unitShort":"cups","unitLong":"cups"},"metric":{"amount":59.147,"unitShort":"ml","unitLong":"milliliters"}}},{"id":null,"aisle":"?","image":null,"consistency":null,"name":"sambal oelek","original":"1/4 teaspoon sambal oelek","originalString":"1/4 teaspoon sambal oelek","originalName":"sambal oelek","amount":0.25,"unit":"teaspoon","meta":[],"metaInformation":[],"measures":{"us":{"amount":0.25,"unitShort":"tsps","unitLong":"teaspoons"},"metric":{"amount":0.25,"unitShort":"tsps","unitLong":"teaspoons"}}}],"id":74689,"title":"Duck with Miso-Almond Butter","readyInMinutes":50,"servings":4,"sourceUrl":"http://www.foodandwine.com/recipes/duck-with-miso-almond-butter","image":"https://spoonacular.com/recipeImages/74689-556x370.jpg","imageType":"jpg","summary":"Need a <b>gluten free and dairy free main course</b>? Duck with Miso-Almond Butter could be a spectacular recipe to try. One portion of this dish contains around <b>32g of protein</b>, <b>36g of fat</b>, and a total of <b>495 calories</b>. For <b>$4.44 per serving</b>, this recipe <b>covers 29%</b> of your daily requirements of vitamins and minerals. This recipe serves 4. 1 person were impressed by this recipe. From preparation to the plate, this recipe takes roughly <b>50 minutes</b>. If you have kosher salt, moulard duck breasts, garlic clove, and a few other ingredients on hand, you can make it. To use up the honey you could follow this main course with the <a href=\"https://spoonacular.com/recipes/honey-gingerbread-133051\">Honey Gingerbread</a> as a dessert. With a spoonacular <b>score of 75%</b>, this dish is pretty good. Similar recipes include <a href=\"https://spoonacular.com/recipes/kale-chips-with-almond-butter-and-miso-350978\">Kale Chips with Almond Butter and Miso</a>, <a href=\"https://spoonacular.com/recipes/miso-almond-sauce-602537\">Miso Almond Sauce</a>, and <a href=\"https://spoonacular.com/recipes/peas-carrots-and-tempeh-with-miso-almond-sauce-758290\">Peas, Carrots, and Tempeh with Miso-Almond Sauce</a>.","cuisines":[],"dishTypes":["lunch","main course","main dish","dinner"],"diets":["gluten free","dairy free"],"occasions":[],"winePairing":{},"instructions":"In a bowl, mix the garlic and 1 tablespoon each of the miso and the oil. Set the duck in a glass baking dish and rub all over with the miso mixture; refrigerate overnight.                                              In a blender, process 1 cup of the almonds, the water, honey, sambal oelek, 2 tablespoons of the oil and the remaining 2 tablespoons of miso until smooth. Press the miso butter through a strainer into a small bowl.                                              Preheat the oven to 450. Rinse the marinade off the duck; pat dry. Lightly season the skin with salt. Heat a large, ovenproof skillet. Add the duck, skin side down, and cook over high heat until some fat is rendered, about 1 minute. Reduce the heat to moderate and cook until the skin is golden, about 7 minutes. Transfer the skillet to the oven and roast for about 10 minutes, until the duck is slightly firm to the touch and the meat is medium. Transfer to a cutting board and let rest for 10 minutes.                                              Coarsely chop the remaining 2 tablespoons of almonds. Spoon the miso-almond butter onto plates. Thinly slice the duck breasts crosswise and arrange the slices on the almond butter. Garnish with the chopped almonds and serve.","analyzedInstructions":[{"name":"","steps":[{"number":1,"step":"In a bowl, mix the garlic and 1 tablespoon each of the miso and the oil. Set the duck in a glass baking dish and rub all over with the miso mixture; refrigerate overnight.","ingredients":[{"id":11215,"name":"garlic","localizedName":"garlic","image":"garlic.png"},{"id":5139,"name":"whole duck","localizedName":"whole duck","image":"duck.png"},{"id":16112,"name":"miso","localizedName":"miso","image":"miso.jpg"},{"id":4582,"name":"cooking oil","localizedName":"cooking oil","image":"vegetable-oil.jpg"},{"id":1012034,"name":"dry seasoning rub","localizedName":"dry seasoning rub","image":"seasoning.png"}],"equipment":[{"id":406921,"name":"glass baking pan","localizedName":"glass baking pan","image":"glass-baking-tray.jpg"},{"id":404783,"name":"bowl","localizedName":"bowl","image":"bowl.jpg"}]},{"number":2,"step":"In a blender, process 1 cup of the almonds, the water, honey, sambal oelek, 2 tablespoons of the oil and the remaining 2 tablespoons of miso until smooth. Press the miso butter through a strainer into a small bowl.","ingredients":[{"id":0,"name":"sambal oelek","localizedName":"sambal oelek","image":"chili-paste.png"},{"id":12061,"name":"almonds","localizedName":"almonds","image":"almonds.jpg"},{"id":1001,"name":"butter","localizedName":"butter","image":"butter-sliced.jpg"},{"id":19296,"name":"honey","localizedName":"honey","image":"honey.png"},{"id":14412,"name":"water","localizedName":"water","image":"water.png"},{"id":16112,"name":"miso","localizedName":"miso","image":"miso.jpg"},{"id":4582,"name":"cooking oil","localizedName":"cooking oil","image":"vegetable-oil.jpg"}],"equipment":[{"id":405600,"name":"sieve","localizedName":"sieve","image":"strainer.png"},{"id":404726,"name":"blender","localizedName":"blender","image":"blender.png"},{"id":404783,"name":"bowl","localizedName":"bowl","image":"bowl.jpg"}]},{"number":3,"step":"Preheat the oven to 45","ingredients":[],"equipment":[{"id":404784,"name":"oven","localizedName":"oven","image":"oven.jpg"}]},{"number":4,"step":"Rinse the marinade off the duck; pat dry. Lightly season the skin with salt.","ingredients":[{"id":0,"name":"marinade","localizedName":"marinade","image":"seasoning.png"},{"id":5139,"name":"whole duck","localizedName":"whole duck","image":"duck.png"},{"id":2047,"name":"salt","localizedName":"salt","image":"salt.jpg"}],"equipment":[]},{"number":5,"step":"Heat a large, ovenproof skillet.","ingredients":[],"equipment":[{"id":404645,"name":"frying pan","localizedName":"frying pan","image":"pan.png"}]},{"number":6,"step":"Add the duck, skin side down, and cook over high heat until some fat is rendered, about 1 minute. Reduce the heat to moderate and cook until the skin is golden, about 7 minutes.","ingredients":[{"id":5139,"name":"whole duck","localizedName":"whole duck","image":"duck.png"}],"equipment":[],"length":{"number":8,"unit":"minutes"}},{"number":7,"step":"Transfer the skillet to the oven and roast for about 10 minutes, until the duck is slightly firm to the touch and the meat is medium.","ingredients":[{"id":5139,"name":"whole duck","localizedName":"whole duck","image":"duck.png"},{"id":1065062,"name":"meat","localizedName":"meat","image":"whole-chicken.jpg"}],"equipment":[{"id":404645,"name":"frying pan","localizedName":"frying pan","image":"pan.png"},{"id":404784,"name":"oven","localizedName":"oven","image":"oven.jpg"}],"length":{"number":10,"unit":"minutes"}},{"number":8,"step":"Transfer to a cutting board and let rest for 10 minutes.","ingredients":[],"equipment":[{"id":404716,"name":"cutting board","localizedName":"cutting board","image":"cutting-board.jpg"}],"length":{"number":10,"unit":"minutes"}},{"number":9,"step":"Coarsely chop the remaining 2 tablespoons of almonds. Spoon the miso-almond butter onto plates. Thinly slice the duck breasts crosswise and arrange the slices on the almond butter.","ingredients":[{"id":12195,"name":"almond butter","localizedName":"almond butter","image":"almond-butter.jpg"},{"id":98912,"name":"duck breast","localizedName":"duck breast","image":"duck-breast.png"},{"id":12061,"name":"almonds","localizedName":"almonds","image":"almonds.jpg"},{"id":16112,"name":"miso","localizedName":"miso","image":"miso.jpg"}],"equipment":[]},{"number":10,"step":"Garnish with the chopped almonds and serve.","ingredients":[{"id":12061,"name":"almonds","localizedName":"almonds","image":"almonds.jpg"}],"equipment":[]}]}],"originalId":null}
+
+
 
 class RecipeCard extends React.Component {
     constructor(props) {
         super(props);
     this.state = {
-        recipe: ''
-    }
-   this.handleClick = this.handleClick.bind(this)     
+        isOpen: true,
+        ingredients: '',
+        instructions: "Sorry, instructions aren't available"
+        }
+       
     }
 
-handleClick(){
-    console.log('hehe')
-}
 
-componentDidMount(props){
-    let id = this.props.recipeId
-    console.log(id)
-    fetchById(id)
-        .then(resp => this.setState((state)=> ({
-            recipe: resp
-        })));
-        .then( )
-        
- }
+componentDidUpdate(prevProps){
+    
+    if (this.props.recipeId !== prevProps.recipeId){
+        fetchById(this.props.recipeId) 
+            .then(resp => this.setState((state)=>({
+            ingredients: [...resp.extendedIngredients.map(ing => 
+            (<li data-ingredient-id={ing.id} cartItem={ing.name.charAt(0).toUpperCase() + ing.name.slice(1)} key={ing.name}>{ing.name.charAt(0).toUpperCase() + ing.name.slice(1)}  {Math.ceil(ing.measures.metric.amount)}  {ing.measures.metric.unitShort}<span title="Add to Cart" onClick={this.props.addItemToCart} class="shopping-cart-icon"><FontAwesomeIcon icon="shopping-cart"/></span></li>))],
+            instructions: resp.instructions 
+
+            })));
+        }
+    }        
+ 
 
     render(){
-
-    function renderIngredients(ing){
-        return(<li>{ing.name} ({ing.measures.metric.amount} {ing.measures.metric.unitShort})</li>
-        )
-    }    
-       
+  
     return (<div>
-    <div onClick={this.props.openRecipe} className="recipe-card" data-recipeid={this.props.recipeId}>
-                <img data-recipeid={this.props.recipeId} src={this.props.imgSrc} alt=""></img>
-                <h3 data-recipeid={this.props.recipeId}> {this.props.recipeTitle}</h3>
-            </div>
-            <div id="expanded-recipe">
-                {/* <ul>{renderIngredients(this.state.recipe)}</ul> */}
-                <p id="close-recipe-x" onClick={this.props.closeRecipe}>x</p>
-            <p>{this.state.recipe.title}</p>
-            <p></p>
-            </div>
+                <div onClick={this.props.openRecipe} className="recipe-card" data-recipeid={this.props.recipeId}>
+                    {this.props.recipeIsOpen && <p class="close-recipe-x" onClick={this.props.closeRecipe}>x</p>}
+                    <img  src={this.props.imgSrc} alt=""></img>
+                    <br/>
+                    <h3>  {this.props.recipeTitle}</h3>
+                
+                    {this.props.recipeIsOpen && <div id="expanded-recipe">
+                        <h3>Ingredients</h3>
+                        <br />
+                        <ul class="ingredient-list">{this.state.ingredients}</ul>
+                        <h3>Instructions</h3>
+
+                        <p>{this.state.instructions}</p>
+                        <br/>
+                        
+                    </div>}
             
-        </div>
-            
-            
-            )
+                </div>
+            </div>)
+    
+    
+    
+
     }
 }
+
 
 export default RecipeCard
