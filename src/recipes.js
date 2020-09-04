@@ -1,6 +1,5 @@
 import React from 'react';
 import RecipeCard from './recipeCard.js'
-import RecipeExpanded from './recipeExpanded.js'
 
 const Recipes = (props) => {
         if (props.birdType !== "") {
