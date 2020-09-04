@@ -5,6 +5,7 @@ import Recipes from './recipes.js'
 import RecipeBtn from './recipeBtn.js'
 import {fetchRecipes, fetchById} from './api.js'
 import Home from './home.js'
+import OrderForm from './orderform.js'
 import {
   BrowserRouter as Router,
   Switch,
@@ -30,16 +31,16 @@ class App extends React.Component {
       recipeIds: '',
       recipeIsOpen: false,
       openRecipeId: '',
-      cartItems: [],
+      cartItems: [<li>Your items: </li>,],
       cartItemsIds: [],
     };
-    this.chooseBird = this.chooseBird.bind(this)
+    this.searchQuery = this.searchQuery.bind(this)
     this.openRecipe = this.openRecipe.bind(this)
     this.closeExpandedRecipe = this.closeExpandedRecipe.bind(this)
     this.addItemToCart = this.addItemToCart.bind(this)
   }
 
-chooseBird(event){
+searchQuery(event){
    let bird = event.target.attributes['data-value'].value
    let titleArr = []
     let imgArr = []
@@ -116,13 +117,15 @@ addItemToCart(event){
           <Header cartItems={this.state.cartItems}/>
             
               <Route exact path='/recipes'>
-                  <RecipeBtn clickAction={this.chooseBird} />
+                  <RecipeBtn clickAction={this.searchQuery} />
                   <Recipes addItemToCart={this.addItemToCart} closeRecipe={this.closeExpandedRecipe} recipeIsOpen={this.state.recipeIsOpen} openRecipe={this.openRecipe} recipeIds={this.state.recipeIds} imgUrls={this.state.imgUrls} recipeTitles={this.state.recipeTitles} birdType={this.state.birdType} />
               </Route>
               <Route exact path='/home'>
                 <Home />
               </Route>
-            
+              <Route exact path='/order'>
+                <OrderForm cartItems={this.state.cartItems} />
+              </Route>
           <Footer />
             
           </div>

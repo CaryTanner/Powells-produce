@@ -19,11 +19,9 @@ const Header = (props) => {
                         <ul>
                             <li><Link to="/home">Home</Link></li>
                             <li><Link to="/recipes">Recipes</Link></li>
-                            <li><Link to="/recipes">Recipes</Link></li>
-                            <li><Link to="/recipes">Recipes</Link></li>
-                            <li> <a href="about.html">About</a></li>
-                            <li><a href="contacts.html">Contact</a></li>
-                            <li><input type="search" placeholder="Search"/><button>Search</button></li>
+                            <li><Link to="/order">Place Order</Link></li>
+                           
+                           
                             
                         </ul>
                         <ShoppingCart  cartItems={props.cartItems}/>
