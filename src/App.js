@@ -2,10 +2,10 @@ import React from 'react';
 import Header from './header.js'
 import Footer from './footer.js'
 import Recipes from './recipes.js'
-import RecipeBtn from './recipeBtn.js'
 import {fetchRecipes, fetchById} from './api.js'
 import Home from './home.js'
 import OrderForm from './orderform.js'
+import SearchBar from './SearchBar.js'
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,7 +25,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      birdType: '',
+      recipeSearchQuery: '',
       recipeTitles: '',
       imgUrls: '',
       recipeIds: '',
@@ -41,21 +41,21 @@ class App extends React.Component {
   }
 
 searchQuery(event){
-   let bird = event.target.attributes['data-value'].value
+   let searchQuery = event.target.attributes['data-searchQuery'].value
    let titleArr = []
     let imgArr = []
     let idArr = [] 
-      this.setState((state) => ({
-                  birdType: bird,}))
 
-   fetchRecipes(bird)
+//remove intermediate variables?? ln
+
+   fetchRecipes(searchQuery)
           .then(resp => (resp.results.forEach((index) => {
               titleArr.push(index.title)
               imgArr.push(index.image) 
               idArr.push(index.id)}))) 
 
           .then((state) => this.setState({
-                birdType: bird,
+                recipeSearchQuery: searchQuery,
                 recipeTitles: titleArr,
                 imgUrls: imgArr,
                 recipeIds: idArr
@@ -87,10 +87,9 @@ closeExpandedRecipe(event){
   
 addItemToCart(event){
   if (event.currentTarget.parentNode.attributes['data-ingredient-id'] == undefined) {
-    alert('Sorry, but that item is temporarily unavailable')
+    alert('Sorry, but this item is unavailable')
     
     //offer something similar
-  // a new test
     return
    } 
 
@@ -115,10 +114,18 @@ addItemToCart(event){
      <Router>
           <div className="App">
           <Header cartItems={this.state.cartItems}/>
-            
+           <SearchBar searchQuery={this.searchQuery}/> 
               <Route exact path='/recipes'>
-                  <RecipeBtn clickAction={this.searchQuery} />
-                  <Recipes addItemToCart={this.addItemToCart} closeRecipe={this.closeExpandedRecipe} recipeIsOpen={this.state.recipeIsOpen} openRecipe={this.openRecipe} recipeIds={this.state.recipeIds} imgUrls={this.state.imgUrls} recipeTitles={this.state.recipeTitles} birdType={this.state.birdType} />
+                  
+                  <Recipes addItemToCart={this.addItemToCart} 
+                            closeRecipe={this.closeExpandedRecipe} 
+                            recipeIsOpen={this.state.recipeIsOpen} 
+                            openRecipe={this.openRecipe} 
+                            recipeIds={this.state.recipeIds} 
+                            imgUrls={this.state.imgUrls} 
+                            recipeTitles={this.state.recipeTitles} 
+                            recipeSearchQuery={this.state.recipeSearchQuery} 
+                  />
               </Route>
               <Route exact path='/home'>
                 <Home />
