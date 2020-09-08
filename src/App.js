@@ -6,6 +6,8 @@ import {fetchRecipes, fetchById} from './api.js'
 import Home from './home.js'
 import OrderForm from './orderform.js'
 import SearchBar from './SearchBar.js'
+import IndividualRecipe from './individualRecipe.js'
+import OrderConfirmation from './orderConfirmation.js'
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,64 +28,27 @@ class App extends React.Component {
     super(props);
     this.state = {
       recipeSearchQuery: '',
-      recipeTitles: '',
-      imgUrls: '',
-      recipeIds: '',
-      recipeIsOpen: false,
-      openRecipeId: '',
+      recipes: '',
       cartItems: [<li>Your items: </li>,],
       cartItemsIds: [],
     };
     this.searchQuery = this.searchQuery.bind(this)
-    this.openRecipe = this.openRecipe.bind(this)
-    this.closeExpandedRecipe = this.closeExpandedRecipe.bind(this)
+    this.orderFormChange = this.orderFormChange.bind(this)
     this.addItemToCart = this.addItemToCart.bind(this)
   }
 
 searchQuery(event){
-   let searchQuery = event.target.attributes['data-searchQuery'].value
-   let titleArr = []
-    let imgArr = []
-    let idArr = [] 
-
-//remove intermediate variables?? ln
-
+   let searchQuery = event.target.attributes['data-searchquery'].value
+   
    fetchRecipes(searchQuery)
-          .then(resp => (resp.results.forEach((index) => {
-              titleArr.push(index.title)
-              imgArr.push(index.image) 
-              idArr.push(index.id)}))) 
-
-          .then((state) => this.setState({
+          .then(resp => this.setState((state) => ({
                 recipeSearchQuery: searchQuery,
-                recipeTitles: titleArr,
-                imgUrls: imgArr,
-                recipeIds: idArr
-                }) )   
-               
+                recipes: resp
+                })))  
+              
   }
 
-openRecipe(event){
-  let id = event.currentTarget.attributes['data-recipeId'].value
-  if(this.state.recipeIsOpen) return
-  event.currentTarget.classList.add('open-recipe-card')
-  this.setState((state)=>({
-     recipeIsOpen: true,
-     openRecipeId: id
-    }))  
-   
-}  
 
-
-
-closeExpandedRecipe(event){
-  let x = event.currentTarget
-  x.parentNode.classList.remove('open-recipe-card')
-  this.setState((state)=>({
-    recipeIsOpen: false,
-    openRecipeId: " "
-    }))  
-}
   
 addItemToCart(event){
   if (event.currentTarget.parentNode.attributes['data-ingredient-id'] == undefined) {
@@ -107,7 +72,10 @@ addItemToCart(event){
         }))  
 
   }
-
+  orderFormChange(event){
+//items can be added after submit...
+    this.setState({[event.target.name]: event.target.value })
+}
 
   render() {
     return (
@@ -117,21 +85,20 @@ addItemToCart(event){
            <SearchBar searchQuery={this.searchQuery}/> 
               <Route exact path='/recipes'>
                   
-                  <Recipes addItemToCart={this.addItemToCart} 
-                            closeRecipe={this.closeExpandedRecipe} 
-                            recipeIsOpen={this.state.recipeIsOpen} 
-                            openRecipe={this.openRecipe} 
-                            recipeIds={this.state.recipeIds} 
-                            imgUrls={this.state.imgUrls} 
-                            recipeTitles={this.state.recipeTitles} 
+                  <Recipes  
+                            recipes={this.state.recipes}
                             recipeSearchQuery={this.state.recipeSearchQuery} 
                   />
               </Route>
               <Route exact path='/home'>
                 <Home />
               </Route>
+              <Route path="/recipes/:id" render={(props) => <IndividualRecipe {...props} addItemToCart={this.addItemToCart} />} />
               <Route exact path='/order'>
-                <OrderForm cartItems={this.state.cartItems} />
+                <OrderForm orderFormChange={this.orderFormChange} cartItems={this.state.cartItems} />
+              </Route>
+              <Route exact path='/orderconfirmation'>
+                <OrderConfirmation  firstName={this.state.firstName} lastName={this.state.lastName} address={this.state.address} deliveryTime={this.state.deliveryTime} deliveryDate={this.state.deliveryDate} cartItems={this.state.cartItems} />
               </Route>
           <Footer />
             

@@ -4,7 +4,7 @@
 
 
 export const fetchRecipes = (searchTerm) => {
-    const url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=6d5d968c97a94abdb1aded627bc8c45a&number=2&sort=random&query="+ searchTerm 
+    const url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=6d5d968c97a94abdb1aded627bc8c45a&number=1&sort=random&query="+ searchTerm 
     return fetch(url)
         .then(resp => resp.json())
         

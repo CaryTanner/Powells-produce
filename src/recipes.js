@@ -1,39 +1,22 @@
 import React from 'react';
 import RecipeCard from './recipeCard.js'
+import { recipeCards } from './recipeCards.js'
 const Recipes = (props) => {
-        if (props.recipeSearchQuery !== "") {
+        if (props.recipeSearchQuery !== "" && props.recipes.results.length <= 0) {
+            return (<div>
+                <h2>Recipes</h2>
+                <div>Sorry, no recipes match your search. Please try again.</div>
+                
+                </div>)
+        } else if (props.recipeSearchQuery !== "") {
+            
                return ( <div>
                         <h2>Recipes</h2>
                         <div id="display-recipe">
+                            {props.recipes.results.map(recipeCards)}
+                        </div>
+                        </div>)
 
-{/* create a way to loop through recipe results?? */}
-
-                            <RecipeCard 
-                                addItemToCart={props.addItemToCart} 
-                                closeRecipe={props.closeRecipe} 
-                                recipeIsOpen={props.recipeIsOpen} 
-                                openRecipe={props.openRecipe} 
-                                recipeTitle={props.recipeTitles[0]} 
-                                imgSrc={props.imgUrls[0]} 
-                                recipeId={props.recipeIds[0]} 
-                            />
-                            
-                            <RecipeCard 
-                                addItemToCart={props.addItemToCart} 
-                                closeRecipe={props.closeRecipe} 
-                                recipeIsOpen={props.recipeIsOpen} 
-                                openRecipe={props.openRecipe} 
-                                recipeTitle={props.recipeTitles[1]} 
-                                imgSrc={props.imgUrls[1]} 
-                                recipeId={props.recipeIds[1]} 
-                            />
-                            
-                            {/* <RecipeCard addItemToCart={props.addItemToCart} closeRecipe={props.closeRecipe} recipeIsOpen={props.recipeIsOpen} openRecipe={props.openRecipe} recipeTitle={props.recipeTitles[2]} imgSrc={props.imgUrls[2]} recipeId={props.recipeIds[2]} />
-                            <RecipeCard addItemToCart={props.addItemToCart} closeRecipe={props.closeRecipe} recipeIsOpen={props.recipeIsOpen} openRecipe={props.openRecipe} recipeTitle={props.recipeTitles[3]} imgSrc={props.imgUrls[3]} recipeId={props.recipeIds[3]} />
-                            <RecipeCard addItemToCart={props.addItemToCart} closeRecipe={props.closeRecipe} recipeIsOpen={props.recipeIsOpen} openRecipe={props.openRecipe} recipeTitle={props.recipeTitles[4]} imgSrc={props.imgUrls[4]} recipeId={props.recipeIds[4]} />
-                            <RecipeCard addItemToCart={props.addItemToCart} closeRecipe={props.closeRecipe} recipeIsOpen={props.recipeIsOpen} openRecipe={props.openRecipe} recipeTitle={props.recipeTitles[5]} imgSrc={props.imgUrls[5]} recipeId={props.recipeIds[5]} />    */}
-                    </div>
-                    </div>)
                     
         } else return <div id="choose-recipe-space-saver"> 
                             <h2>Recipes</h2> 
