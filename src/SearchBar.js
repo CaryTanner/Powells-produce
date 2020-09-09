@@ -31,11 +31,11 @@ console.log(suggestions)
  {/* doesn't disappear when on new page        */}
          { suggestions && <ul>{suggestions.map(suggestion => <Link to={"/recipes/"+ suggestion.id} ><li>{suggestion.title}</li></Link>)}</ul> }        
         <Link to="/recipes">     
-        <button id="search-button" 
-                data-searchquery={searchQuery} 
-                onClick={props.searchQuery}>
-            Search
-        </button>
+            <button className="clickable" id="search-button" 
+                    data-searchquery={searchQuery} 
+                    onClick={props.searchQuery}>
+                Search
+            </button>
         </Link>
         
         </div>
