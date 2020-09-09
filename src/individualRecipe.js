@@ -1,9 +1,7 @@
 import React from 'react'
 import {fetchById} from './api.js'
 import {ingredientList} from './IngredientList.js'
-import {
-    Link
-  } from "react-router-dom";
+
 
 
 class IndividualRecipe extends React.Component  {
@@ -32,7 +30,7 @@ render(){
     return (
          
             <div class="individual-recipe">
-                <Link to="/recipes"><span> &lt;- Back </span></Link>
+                
                 <img src={this.state.image}></img>
                 <h2>{this.state.title}</h2> 
                 <h3>Ingredients</h3> 

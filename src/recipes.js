@@ -1,5 +1,4 @@
 import React from 'react';
-import RecipeCard from './recipeCard.js'
 import { recipeCards } from './recipeCards.js'
 const Recipes = (props) => {
         if (props.recipeSearchQuery !== "" && props.recipes.results.length <= 0) {

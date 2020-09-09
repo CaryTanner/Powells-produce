@@ -7,7 +7,9 @@ class ShoppingCart extends React.Component{
     this.state = {
         cartIsOpen: false
         }
-      this.openCart = this.openCart.bind(this) 
+        this.cartContainer = React.createRef();
+      this.openCart = this.openCart.bind(this); 
+      this.onClickOutsideCart = this.onClickOutsideCart.bind(this);
     }
 
 openCart(event){
@@ -17,11 +19,21 @@ openCart(event){
     }))
 }
 
+onClickOutsideCart(event) {    
+    if (this.state.cartIsOpen && !this.cartContainer.current.contains(event.target)) { 
+            this.cartContainer.current.classList.remove("main-shopping-cart-open") 
+            this.setState({ cartIsOpen: false });    
+}  }
+
+componentDidMount() {    
+    window.addEventListener('click', this.onClickOutsideCart);  }
+
+
     render(){
-         return (<div  className="main-shopping-cart">
+         return (<div ref={this.cartContainer} className="main-shopping-cart">
            <span title="View Shopping Cart" onClick={this.openCart}><FontAwesomeIcon icon="shopping-cart"/></span>
             
-           {this.state.cartIsOpen && <ul id="shopping-cart-ul">{this.props.cartItems}</ul>}
+           {this.state.cartIsOpen && <ul id="shopping-cart-ul">{this.props.cartItems.map(x => <li>{x}</li>)}</ul>}
         </div>
 
         )

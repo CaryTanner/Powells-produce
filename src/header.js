@@ -19,7 +19,7 @@ const Header = (props) => {
                         <ul>
                             <li><Link to="/home">Home</Link></li>
                             <li><Link to="/recipes">Recipes</Link></li>
-                            <li><Link to="/order">Place Order</Link></li>
+                            <li><Link to="/order">Order</Link></li>
                            
                            
                             

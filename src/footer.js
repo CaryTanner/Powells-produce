@@ -7,7 +7,7 @@ const Footer = () => {
           &copy; Cary Tanner 2020
           </div>      
         <div className="footer-box"> 
-          <a href="https://en.wikipedia.org/wiki/produce" title="Wikipedia about used books">Learn more about produce!</a>
+          <a href="https://en.wikipedia.org/wiki/produce" title="Wikipedia about produce">Learn more about produce!</a>
         </div>  
         
         <div className="footer-box">

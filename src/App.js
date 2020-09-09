@@ -29,12 +29,13 @@ class App extends React.Component {
     this.state = {
       recipeSearchQuery: '',
       recipes: '',
-      cartItems: [<li>Your items: </li>,],
+      cartItems: [],
       cartItemsIds: [],
     };
     this.searchQuery = this.searchQuery.bind(this)
     this.orderFormChange = this.orderFormChange.bind(this)
     this.addItemToCart = this.addItemToCart.bind(this)
+    this.removeItemFromCart = this.removeItemFromCart.bind(this)
   }
 
 searchQuery(event){
@@ -67,11 +68,29 @@ addItemToCart(event){
 
     event.currentTarget.style.color = 'red'
     this.setState((state)=>({
-        cartItems: [...this.state.cartItems, <li>{item}</li>],
+        cartItems: [...this.state.cartItems, item],
         cartItemsIds: [...this.state.cartItemsIds, itemId]
         }))  
 
   }
+
+removeItemFromCart(event){
+  let item = event.currentTarget.parentNode.attributes['cartItem'].value
+  let itemIndex = this.state.cartItems.indexOf(item)
+  
+  let cartItems = [...this.state.cartItems]
+  let cartItemsIds = [...this.state.cartItems]
+  cartItems.splice(itemIndex, 1)
+  //items placed in both arrays in the same order thus have same index 
+  cartItemsIds.splice(itemIndex, 1)
+  this.setState((state)=> ({
+    cartItems: cartItems,
+    cartItemsIds: cartItemsIds
+  }))
+
+
+}
+
   orderFormChange(event){
 //items can be added after submit...
     this.setState({[event.target.name]: event.target.value })
@@ -82,20 +101,22 @@ addItemToCart(event){
      <Router>
           <div className="App">
           <Header cartItems={this.state.cartItems}/>
-           <SearchBar searchQuery={this.searchQuery}/> 
+           
               <Route exact path='/recipes'>
-                  
+                  <SearchBar searchQuery={this.searchQuery}/> 
                   <Recipes  
                             recipes={this.state.recipes}
                             recipeSearchQuery={this.state.recipeSearchQuery} 
                   />
               </Route>
               <Route exact path='/home'>
+                <SearchBar searchQuery={this.searchQuery}/>
                 <Home />
+                 
               </Route>
               <Route path="/recipes/:id" render={(props) => <IndividualRecipe {...props} addItemToCart={this.addItemToCart} />} />
               <Route exact path='/order'>
-                <OrderForm orderFormChange={this.orderFormChange} cartItems={this.state.cartItems} />
+                <OrderForm removeItemFromCart={this.removeItemFromCart} orderFormChange={this.orderFormChange} cartItems={this.state.cartItems} />
               </Route>
               <Route exact path='/orderconfirmation'>
                 <OrderConfirmation  firstName={this.state.firstName} lastName={this.state.lastName} address={this.state.address} deliveryTime={this.state.deliveryTime} deliveryDate={this.state.deliveryDate} cartItems={this.state.cartItems} />

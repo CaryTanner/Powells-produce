@@ -90,16 +90,9 @@ footer {
   width: 80%;
   filter: grayscale(100%);
   opacity: .3;
-  
-
-  
-
+  -webkit-filter: grayscale(100%);
 }
 
-h2 {
-  font-size: 5rem;
-  margin: 2rem auto ;
-}
 
 .recipe-card {
    border: 2px solid black;
@@ -126,6 +119,9 @@ h2 {
 .recipe-card:hover {
   transform: scale(1.05);
   -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
 }
 
 
@@ -189,9 +185,6 @@ h2 {
   margin: .2rem 0;
 }
 
-.main-shopping-cart:hover {
-  
-}
 
 #search-bar-input{
   width: 80%;
@@ -216,4 +209,26 @@ h2 {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+}
+
+#delivery-times{
+  display: inline-block;
+}
+#delivery-times input{
+  margin: 0 .5rem 0 .1rem;
+
+}
+
+.individual-recipe h2, .individual-recipe h3, .individual-recipe img{
+  margin: 1rem auto;
+  max-width: 80%;
+}
+
+.individual-recipe p {
+ margin: 1rem auto;
+ width: 80%;
+}
+
+.clickable{
+  cursor: pointer
 }

@@ -13,6 +13,13 @@ export const ingredientList = (ing, clickFunc) => (
     </li>
     );
 
-
+    export const ingredientListRemove = (ing, clickFunc) => (
+ 
+           <span cartItem={ing.innerText} title="Remove Item"  class="shopping-cart-icon" onClick={clickFunc}>
+              {ing} x
+           </span>
+       
+       );
+   
 
     
