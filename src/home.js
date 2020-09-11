@@ -6,9 +6,20 @@ import React from 'react';
 export function Home (){
     return (
                 <div id='home-page'>
-                    I'm home
-                    <br />
-                    <img width="600px" src="https://i.imgur.com/VmBhgk5.jpg" />
+                   <div className="home-section" id="home-section-one">
+
+                   </div>
+                   <div className="home-section" id="home-section-two">
+
+                   </div>
+                   <div className="home-section" id="home-section-three">
+
+                   </div>
+                   <div className="home-section" id="home-section-four">
+
+                   </div>
+                   
+
                 </div>
 
            
