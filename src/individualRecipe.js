@@ -8,8 +8,8 @@ class IndividualRecipe extends React.Component  {
     constructor(props) {
         super(props);
     this.state = {
-       ingredients: '',
-       instructions: 'Sorry, instructions are unavailable for this recipe'
+       ingredients: 'Loading...',
+       instructions: 'Loading...'
     }
     }
 
@@ -19,7 +19,7 @@ componentDidMount(){
             .then(resp => this.setState((state, props)=>({
             title: resp.title,    
             ingredients: [...resp.extendedIngredients.map((ing) => ingredientList(ing, this.props.addItemToCart))],
-            instructions: resp.instructions, 
+            instructions: [...resp.instructions], 
             image: resp.image
 
             })));
@@ -27,6 +27,7 @@ componentDidMount(){
     }  
 
 render(){
+    console.log(this.state.instructions)
     return (
          
             <div class="individual-recipe">
@@ -36,7 +37,8 @@ render(){
                 <h3>Ingredients</h3> 
                 <ul>{this.state.ingredients}</ul> 
                 <h3>Instructions</h3>
-                <p>{this.state.instructions}</p>  
+                
+                <p>{this.state.instructions ? this.state.instructions: "Sorry, instructions are unavailable for this recipe."}</p>  
             </div>   
     )
 }
