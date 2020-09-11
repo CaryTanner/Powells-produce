@@ -28,6 +28,10 @@ onClickOutsideCart(event) {
 componentDidMount() {    
     window.addEventListener('click', this.onClickOutsideCart);  }
 
+componentWillUnmount() {
+    window.removeEventListener('click', this.onClickOutsideCart);
+}    
+
 
     render(){
          return (<div ref={this.cartContainer} className="main-shopping-cart">
