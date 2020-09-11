@@ -1,10 +1,9 @@
 
 import React, {useState} from 'react'
-
 import {
     Link
   } from "react-router-dom";
-import { ingredientListRemove } from './IngredientList';
+
 
 const OrderForm = (props) => {
     
@@ -13,14 +12,13 @@ const OrderForm = (props) => {
     return (<div id="order-form-container">
         <div id="order-form-cart-list-container">
 
- {/* ----- add multiplier or remover???------------ */}
-
-            <h3>Shopping Cart</h3>
+            <h3 className="border-bottom">Shopping Cart</h3>
+<h4>There {props.cartItems.length == 1 ? <span>is {props.cartItems.length} item</span> : <span>are {props.cartItems.length} items</span>} in your cart</h4>
 <ul>{props.cartItems.map(item => <li cartItem={item}>{item}<span className="clickable" title="Remove Item"onClick={props.removeItemFromCart}> x </span></li>)}</ul>
             
         </div>
         <div id="order-form">
-            <h3>Place your order below</h3>
+            <h3 className="border-bottom">Place your order below</h3>
             <input  type="text" onChange={props.orderFormChange} placeholder="First Name" name="firstName"></input>
             <input type="text" onChange={props.orderFormChange} placeholder="Last Name" name="lastName"></input>
             <input type="text" onChange={props.orderFormChange} placeholder="Address" name="address"></input>
@@ -35,7 +33,9 @@ const OrderForm = (props) => {
             </div>
             <label htmlFor="deliveryDate">Delivery date:</label>
                 <input name="deliveryDate" onChange={props.orderFormChange} type="date" min={today} ></input>
-            <Link to="/orderconfirmation"><button id="order-form-submit-btn">Submit</button></Link>        
+            
+        {/* write an onclick- for button makes copy of cartItems and clears cartItems from state- copy sent as props to confirmation */}
+            <Link to="/orderconfirmation"><button onClick={props.submitOrder} id="order-form-submit-btn">Submit</button></Link>        
         </div>
         
         
