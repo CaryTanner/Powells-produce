@@ -34,6 +34,7 @@ class App extends React.Component {
     };
     this.searchQuery = this.searchQuery.bind(this)
     this.orderFormChange = this.orderFormChange.bind(this)
+    this.submitOrder = this.submitOrder.bind(this)
     this.addItemToCart = this.addItemToCart.bind(this)
     this.removeItemFromCart = this.removeItemFromCart.bind(this)
   }
@@ -52,15 +53,17 @@ searchQuery(event){
 
   
 addItemToCart(event){
-  if (event.currentTarget.parentNode.attributes['data-ingredient-id'] == undefined) {
-    alert('Sorry, but this item is unavailable')
-    
-    //offer something similar
-    return
-   } 
-
   let item = event.currentTarget.parentNode.attributes['cartItem'].value
    let itemId = event.currentTarget.parentNode.attributes['data-ingredient-id'].value
+
+    if (event.currentTarget.parentNode.attributes['data-ingredient-id'] == undefined) {
+       alert('Sorry, but this item is unavailable')
+       return
+    //offer something similar??
+    
+    } 
+
+  
    
     if(this.state.cartItemsIds.includes(itemId)) { 
       alert('This item is already in your shopping cart')
@@ -78,22 +81,29 @@ removeItemFromCart(event){
   let item = event.currentTarget.parentNode.attributes['cartItem'].value
   let itemIndex = this.state.cartItems.indexOf(item)
   
-  let cartItems = [...this.state.cartItems]
-  let cartItemsIds = [...this.state.cartItems]
-  cartItems.splice(itemIndex, 1)
+  let copyCartItems = [...this.state.cartItems]
+  let copyCartItemsIds = [...this.state.cartItems]
+  copyCartItems.splice(itemIndex, 1)
   //items placed in both arrays in the same order thus have same index 
-  cartItemsIds.splice(itemIndex, 1)
+  copyCartItemsIds.splice(itemIndex, 1)
   this.setState((state)=> ({
-    cartItems: cartItems,
-    cartItemsIds: cartItemsIds
+    cartItems: copyCartItems,
+    cartItemsIds: copyCartItemsIds
   }))
 
 
 }
 
   orderFormChange(event){
-//items can be added after submit...
     this.setState({[event.target.name]: event.target.value })
+}
+
+submitOrder(){
+  let copyOrderedItems = [...this.state.cartItems]
+  this.setState(()=>({
+    cartItems: [],
+    orderedItems: copyOrderedItems,
+  }))
 }
 
   render() {
@@ -114,12 +124,12 @@ removeItemFromCart(event){
                 <Home />
                  
               </Route>
-              <Route path="/recipes/:id" render={(props) => <IndividualRecipe {...props} addItemToCart={this.addItemToCart} />} />
+              <Route path="/recipes/:id" render={(props) => <div> <SearchBar searchQuery={this.searchQuery}/> <IndividualRecipe {...props} addItemToCart={this.addItemToCart} /></div>} />
               <Route exact path='/order'>
-                <OrderForm removeItemFromCart={this.removeItemFromCart} orderFormChange={this.orderFormChange} cartItems={this.state.cartItems} />
+                <OrderForm submitOrder={this.submitOrder} removeItemFromCart={this.removeItemFromCart} orderFormChange={this.orderFormChange} cartItems={this.state.cartItems} />
               </Route>
               <Route exact path='/orderconfirmation'>
-                <OrderConfirmation  firstName={this.state.firstName} lastName={this.state.lastName} address={this.state.address} deliveryTime={this.state.deliveryTime} deliveryDate={this.state.deliveryDate} cartItems={this.state.cartItems} />
+                <OrderConfirmation  orderedItems={this.state.orderedItems} firstName={this.state.firstName} lastName={this.state.lastName} address={this.state.address} deliveryTime={this.state.deliveryTime} deliveryDate={this.state.deliveryDate} />
               </Route>
           <Footer />
             
