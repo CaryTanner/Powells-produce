@@ -1,34 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-scroll-behavior: smooth;
-
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   text-align: center;
 }
 /* https://images.pexels.com/photos/319798/pexels-photo-319798.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260 */
 /* https://images.pexels.com/photos/3049057/pexels-photo-3049057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 */
-header{
-  margin: .5rem auto;
-  width: 95%; 
+header {
+  margin: 0.5rem auto;
+  width: 95%;
   background-image: url("https://images.pexels.com/photos/319798/pexels-photo-319798.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: bottom; 
-   border-radius: 5px;;
-   height: 15rem;  
-   text-align: left; 
-  }
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  border-radius: 5px;
+  height: 15rem;
+  text-align: left;
+}
 
 header h1 {
   position: relative;
   left: 1rem;
-  color:black;
+  color: black;
   font-size: 5rem;
   filter: drop-shadow(1px 1px 2px white);
   -webkit-filter: drop-shadow(1px 1px 2px white);
@@ -37,12 +36,10 @@ header h1 {
 nav {
   display: flex;
   justify-content: center;
- 
 }
 
 ul {
   list-style-type: none;
-  
 }
 
 nav li {
@@ -51,7 +48,9 @@ nav li {
   font-size: 1.5rem;
 }
 
-a, a:visited, a:active {
+a,
+a:visited,
+a:active {
   text-decoration: none;
   color: inherit;
   transition: 200ms;
@@ -64,60 +63,54 @@ a, a:visited, a:active {
 }
 
 nav a:hover {
-  
   text-decoration: underline;
-  
 }
-
 
 footer {
   display: flex;
   margin: 3rem 0 1rem 0;
   justify-content: space-around;
-  
 }
 
-#display-recipe {  
+#display-recipe {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   justify-content: center;
-  padding: .5rem;
+  padding: 0.5rem;
   min-height: 600px;
   transition: all 300ms;
-  
 }
 #choose-recipe-space-saver img {
   padding-top: 1rem;
   margin: 2rem auto;
   width: 80%;
   filter: grayscale(100%);
-  opacity: .3;
+  opacity: 0.3;
   -webkit-filter: grayscale(100%);
 }
 
-
 .recipe-card {
-   border: 2px solid black;
-   border-radius: 5px;
-   background-color: rgb(245, 240, 240) ;
-   padding: 10px;
-   margin: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: rgb(245, 240, 240);
+  padding: 10px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
- 
+
   transition: 300ms;
   width: 250px;
   height: 300px;
   overflow-y: hidden;
   cursor: pointer;
 }
-.recipe-card img { 
+.recipe-card img {
   width: 200px;
-   margin: 0 auto;
+  margin: 0 auto;
 }
 .recipe-card h3 {
-   font-size: 1.5rem;
-   margin: 1rem 0;
+  font-size: 1.5rem;
+  margin: 1rem 0;
 }
 .recipe-card:hover {
   transform: scale(1.05);
@@ -127,42 +120,29 @@ footer {
   -o-transform: scale(1.05);
 }
 
-
-
-
-
-
-
-
 .ingredient-list li {
- margin: .5rem auto;
+  margin: 0.5rem auto;
 }
 
 .shopping-cart-icon {
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
   cursor: pointer;
 }
 
-.main-shopping-cart{
+.main-shopping-cart {
   position: relative;
-  margin: .5rem .5rem;
- border: 0px solid black;
- cursor: pointer;
- height: 25px;
+  margin: 0.5rem 0.5rem;
+  border: 0px solid black;
+  cursor: pointer;
+  height: 25px;
   transition: 700ms;
   min-width: 150px;
   padding: 6px;
-  
- 
 }
 
-.main-shopping-cart-open { 
-
-  background-color: black ;
+.main-shopping-cart-open {
+  background-color: black;
   color: white;
-  
-  
- 
 }
 
 #shopping-cart-ul {
@@ -173,7 +153,7 @@ footer {
   z-index: 99;
   background-color: white;
   border-bottom: 1px solid black;
-  border-left: 1px solid black; 
+  border-left: 1px solid black;
   border-right: 1px solid black;
   min-width: 150px;
   transition: 500ms;
@@ -185,97 +165,92 @@ footer {
 .main-shopping-cart li {
   display: block;
   font-size: 1rem;
-  margin: .2rem 0;
+  margin: 0.2rem 0;
 }
 
 #autoComplete-ul {
   position: absolute;
-  
+
   left: 10%;
   right: 20%;
   z-index: 99;
   background-color: white;
   border-bottom: 1px solid black;
-  border-left: 1px solid black; 
+  border-left: 1px solid black;
   border-right: 1px solid black;
-  
+
   transition: 500ms;
   color: black;
   overflow-y: scroll;
 }
 
-
-
-#search-bar-container{
+#search-bar-container {
   display: inline-flex;
   width: 80%;
   margin-bottom: 1rem;
 }
 
-#search-bar-input{
+#search-bar-input {
   width: 70vw;
   padding: 5px;
 }
 
-#search-button{
-
-  background-color:  rgb(245, 240, 240);
+#search-button {
+  background-color: rgb(245, 240, 240);
   border: 1px solid black;
-  
+
   width: 100px;
   height: 29px;
   margin: 0 5px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
-
-
-
-
-#order-form-container{
+#order-form-container {
   margin: 1rem auto;
   display: flex;
   justify-content: space-evenly;
 }
 
-#order-form{
-  min-height: 400px ;
+#order-form {
+  min-height: 400px;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
 }
-#order-form button{
+#order-form button {
   padding: 3px 15px;
 }
 
-#delivery-times{
+#delivery-times {
   display: inline-block;
 }
-#delivery-times input{
-  margin: 0 .5rem 0 .1rem;
-
+#delivery-times input {
+  margin: 0 0.5rem 0 0.1rem;
 }
 
-.individual-recipe h2, .individual-recipe h3, .individual-recipe img{
+.individual-recipe h2,
+.individual-recipe h3,
+.individual-recipe img {
   margin: 1rem auto;
   max-width: 80%;
 }
 
 .individual-recipe p {
- margin: 1rem auto;
- width: 80%;
+  margin: 1rem auto;
+  width: 80%;
 }
 
-.clickable{
-  cursor: pointer
+.clickable {
+  cursor: pointer;
 }
 
-#order-confirmation h2, #order-confirmation h3, #order-confirmation h4 {
-  margin: .5rem auto;
-
+#order-confirmation h2,
+#order-confirmation h3,
+#order-confirmation h4 {
+  margin: 0.5rem auto;
 }
 
-#order-confirmation{
+#order-confirmation {
   margin: 1rem auto;
   display: flex;
   justify-content: space-evenly;
@@ -283,43 +258,41 @@ footer {
 .border-bottom {
   border-bottom: 1px solid black;
   width: fit-content;
-  margin: .5rem auto;
+  margin: 0.5rem auto;
   padding: 0 0 5px 0;
 }
 
-@media (max-width: 700px) { 
-  nav{ 
+@media (max-width: 700px) {
+  nav {
     flex-direction: column;
   }
-  .main-shopping-cart{
-    margin: .5rem auto;
+  .main-shopping-cart {
+    margin: 0.5rem auto;
     width: 50%;
   }
   nav li {
-  display: block;
-  padding: 10px 20px;
-  font-size: 1.5rem;
-}
-#search-bar-input{
-  width: 55vw;
-  padding: 5px;
-}
-#order-form-container{
-  flex-direction: column;
-}
-#order-form{
-  margin: 0 auto;
-  width: 90%;
-}
-#order-form button{
-  padding: 6px 45px;
-}
-footer{
-  font-size: .5rem;
-}
-#order-confirmation{
-  flex-direction: column;
-}
-
-
+    display: block;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+  }
+  #search-bar-input {
+    width: 55vw;
+    padding: 5px;
+  }
+  #order-form-container {
+    flex-direction: column;
+  }
+  #order-form {
+    margin: 0 auto;
+    width: 90%;
+  }
+  #order-form button {
+    padding: 6px 45px;
+  }
+  footer {
+    font-size: 0.5rem;
+  }
+  #order-confirmation {
+    flex-direction: column;
+  }
 }
