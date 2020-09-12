@@ -18,7 +18,8 @@ componentDidMount(){
         fetchById(this.props.match.params.id) 
             .then(resp => this.setState((state, props)=>({
             title: resp.title,    
-            ingredients: [...resp.extendedIngredients.map((ing) => ingredientList(ing, this.props.addItemToCart))],
+            ingredients: [...resp.extendedIngredients.map((ing) =>
+                 ingredientList(ing, this.props.addItemToCart))],
             instructions: [...resp.instructions], 
             image: resp.image
 
@@ -32,13 +33,14 @@ render(){
          
             <div class="individual-recipe">
                 
-                <img src={this.state.image}></img>
+                <img src={this.state.image} alt=""></img>
                 <h2>{this.state.title}</h2> 
                 <h3>Ingredients</h3> 
                 <ul>{this.state.ingredients}</ul> 
                 <h3>Instructions</h3>
                 
-                <p>{this.state.instructions ? this.state.instructions: "Sorry, instructions are unavailable for this recipe."}</p>  
+                <p>{this.state.instructions ? this.state.instructions: 
+                    "Sorry, instructions are unavailable for this recipe."}</p>  
             </div>   
     )
 }

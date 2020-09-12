@@ -18,7 +18,8 @@ const OrderConfirmation = (props) => {
                      
                         <div>
                             <h3 className="border-bottom"> Items Ordered </h3>
-                            <ul>{props.orderedItems && props.orderedItems.map(x => <li>{x}</li>)}</ul>
+                            <ul>{props.orderedItems && props.orderedItems.map(
+                                    x => <li>{x}</li>)}</ul>
                         </div> 
                     </div>
                 </div>) 

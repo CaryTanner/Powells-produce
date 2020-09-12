@@ -19,7 +19,8 @@ const SearchBar = (props) => {
 const searchInputField = React.createRef();
 
 const clickOutsideSearch = (event) => {
-    if (suggestions && searchInputField.current !== null && !searchInputField.current.contains(event.target)){
+    if (suggestions && searchInputField.current !== null && 
+        !searchInputField.current.contains(event.target)){
         setSuggestion('')
     }
 }
@@ -38,7 +39,8 @@ useEffect(()=> {
                             data-searchquery={searchQuery} 
 
                             //--keydown doesn't redirect to recipes page from other??
-                            onKeyDown={(event) => event.keyCode == 13 ? props.searchQuery(event) : ''}
+                            onKeyDown={(event) => event.keyCode === 13 ?
+                                             props.searchQuery(event) : ''}
 
                             onChange={() => {
                                 setSearchQuery(document.querySelector('#search-bar-input').value)}} 
@@ -46,7 +48,10 @@ useEffect(()=> {
                             placeholder=" &#128269; Get inspired by 1000's of recipes..."
                     />
 
-                    { suggestions && searchQuery && <ul id="autoComplete-ul">{suggestions.map(suggestion => <Link to={"/recipes/"+ suggestion.id} ><li>{suggestion.title}</li></Link>)}</ul> }        
+                    { suggestions && searchQuery && 
+                    <ul id="autoComplete-ul">{suggestions.map(suggestion => 
+                    <Link to={"/recipes/"+ suggestion.id} >
+                        <li>{suggestion.title}</li></Link>)}</ul> }        
                 </div>
                 <Link to="/recipes">     
                     <button className="clickable" 

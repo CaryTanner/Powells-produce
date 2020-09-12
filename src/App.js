@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './header.js'
 import Footer from './footer.js'
 import Recipes from './recipes.js'
-import {fetchRecipes, fetchById} from './api.js'
+import {fetchRecipes} from './api.js'
 import Home from './home.js'
 import OrderForm from './orderform.js'
 import SearchBar from './SearchBar.js'
@@ -10,9 +10,9 @@ import IndividualRecipe from './individualRecipe.js'
 import OrderConfirmation from './orderConfirmation.js'
 import {
   BrowserRouter as Router,
-  Switch,
+  
   Route,
-  Link
+ 
 } from "react-router-dom";
 
 
@@ -56,15 +56,12 @@ addItemToCart(event){
   let item = event.currentTarget.parentNode.attributes['cartItem'].value
    let itemId = event.currentTarget.parentNode.attributes['data-ingredient-id'].value
 
-    if (event.currentTarget.parentNode.attributes['data-ingredient-id'] == undefined) {
+    if (event.currentTarget.parentNode.attributes['data-ingredient-id'] === undefined) {
        alert('Sorry, but this item is unavailable')
        return
-    //offer something similar??
-    
-    } 
+    //offer something similar??  
+        } 
 
-  
-   
     if(this.state.cartItemsIds.includes(itemId)) { 
       alert('This item is already in your shopping cart')
       return} 
@@ -98,6 +95,8 @@ removeItemFromCart(event){
     this.setState({[event.target.name]: event.target.value })
 }
 
+
+//make array of items to show on order confirmation and clear shopping cart
 submitOrder(){
   let copyOrderedItems = [...this.state.cartItems]
   this.setState(()=>({
@@ -124,12 +123,25 @@ submitOrder(){
                 <Home />
                  
               </Route>
-              <Route path="/recipes/:id" render={(props) => <div> <SearchBar searchQuery={this.searchQuery}/> <IndividualRecipe {...props} addItemToCart={this.addItemToCart} /></div>} />
+              <Route path="/recipes/:id" 
+                render={(props) => <div> 
+                  <SearchBar searchQuery={this.searchQuery}/> 
+                  <IndividualRecipe {...props} addItemToCart={this.addItemToCart} />
+                </div>} />
               <Route exact path='/order'>
-                <OrderForm submitOrder={this.submitOrder} removeItemFromCart={this.removeItemFromCart} orderFormChange={this.orderFormChange} cartItems={this.state.cartItems} />
+                <OrderForm submitOrder={this.submitOrder} 
+                          removeItemFromCart={this.removeItemFromCart} 
+                          orderFormChange={this.orderFormChange} 
+                          cartItems={this.state.cartItems} />
               </Route>
               <Route exact path='/orderconfirmation'>
-                <OrderConfirmation  orderedItems={this.state.orderedItems} firstName={this.state.firstName} lastName={this.state.lastName} address={this.state.address} deliveryTime={this.state.deliveryTime} deliveryDate={this.state.deliveryDate} />
+                <OrderConfirmation  
+                    orderedItems={this.state.orderedItems} 
+                    firstName={this.state.firstName} 
+                    lastName={this.state.lastName} 
+                    address={this.state.address} 
+                    deliveryTime={this.state.deliveryTime}
+                    deliveryDate={this.state.deliveryDate} />
               </Route>
           <Footer />
             

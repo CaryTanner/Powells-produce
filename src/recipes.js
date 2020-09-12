@@ -19,7 +19,7 @@ const Recipes = (props) => {
                     
         } else return <div id="choose-recipe-space-saver"> 
                             <h2>Recipes</h2> 
-                            <img src="https://images.pexels.com/photos/1194432/pexels-photo-1194432.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></img> 
+                            <img src="https://images.pexels.com/photos/1194432/pexels-photo-1194432.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Eggplant in saute pan"></img> 
                         </div>
       
       

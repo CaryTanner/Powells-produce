@@ -1,9 +1,7 @@
 import React from 'react';
 import ShoppingCart from './ShoppingCart.js'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
+    
     Link
   } from "react-router-dom";
 

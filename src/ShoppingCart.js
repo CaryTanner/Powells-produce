@@ -35,9 +35,11 @@ componentWillUnmount() {
 
     render(){
          return (<div ref={this.cartContainer} className="main-shopping-cart">
-           <span title="View Shopping Cart" onClick={this.openCart}><FontAwesomeIcon icon="shopping-cart"/></span>
+           <span title="View Shopping Cart" onClick={this.openCart}>
+               <FontAwesomeIcon icon="shopping-cart"/></span>
             
-           {this.state.cartIsOpen && <ul id="shopping-cart-ul">{this.props.cartItems.map(x => <li>{x}</li>)}</ul>}
+           {this.state.cartIsOpen && <ul id="shopping-cart-ul">{this.props.cartItems.map(x => 
+                                                                    <li>{x}</li>)}</ul>}
         </div>
 
         )
