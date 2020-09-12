@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const OrderForm = (props) => {
@@ -10,7 +10,7 @@ const OrderForm = (props) => {
         <h3 className="border-bottom">Shopping Cart</h3>
         <h4>
           There{" "}
-          {props.cartItems.length == 1 ? (
+          {props.cartItems.length === 1 ? (
             <span>is {props.cartItems.length} item</span>
           ) : (
             <span>are {props.cartItems.length} items</span>
