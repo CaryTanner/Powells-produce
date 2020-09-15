@@ -6,7 +6,7 @@ export const fetchRecipes = (searchTerm) => {
   const url =
     "https://api.spoonacular.com/recipes/complexSearch?apiKey=" +
     apiKey +
-    "&number=1&sort=random&query=" +
+    "&number=8&sort=random&query=" +
     searchTerm;
   return fetch(url)
   .then((resp) => resp.json())
@@ -37,7 +37,7 @@ export const fetchAutoComplete = (searchTerm) => {
 };
 
 export const fetchRandomRecipe = () => {
-  const url = "https://api.spoonacular.com/recipes/random?number=1&apiKey=" + apiKey;
+  const url = "https://api.spoonacular.com/recipes/random?number=4&apiKey=" + apiKey;
   return fetch(url)
   .then((resp) => resp.json())
   .catch(err => console.log(err));
