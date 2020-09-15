@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./header.js";
 import Footer from "./footer.js";
 import Recipes from "./recipes.js";
-import { fetchRecipes } from "./api.js";
+import { fetchRecipes, fetchRandomRecipe } from "./api.js";
 import Home from "./home.js";
 import OrderForm from "./orderform.js";
 import SearchBar from "./SearchBar.js";
@@ -13,6 +13,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 library.add(faShoppingCart);
+
 
 class App extends React.Component {
   constructor(props) {
@@ -95,6 +96,14 @@ class App extends React.Component {
     }));
   }
 
+  componentDidMount() {
+    fetchRandomRecipe().then((resp) =>
+      this.setState((state) => ({
+       randomRecipes: resp
+      }))
+    );
+  }
+
   render() {
     return (
       <Router>
@@ -106,11 +115,12 @@ class App extends React.Component {
             <Recipes
               recipes={this.state.recipes}
               recipeSearchQuery={this.state.recipeSearchQuery}
+              randomRecipes={this.state.randomRecipes}
             />
           </Route>
           <Route exact path="/home">
             <SearchBar searchQuery={this.searchQuery} />
-            <Home />
+            <Home randomRecipes={this.state.randomRecipes}/>
           </Route>
           <Route
             path="/recipes/:id"
