@@ -88,7 +88,7 @@ const OrderForm = (props) => {
         {/* write an onclick- for button makes copy of cartItems and clears cartItems from state- copy sent as props to confirmation */}
         <Link to="/orderconfirmation">
           <button onClick={props.submitOrder} id="order-form-submit-btn">
-            Submit
+            Order
           </button>
         </Link>
       </div>
