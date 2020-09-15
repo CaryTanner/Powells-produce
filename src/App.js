@@ -118,7 +118,7 @@ class App extends React.Component {
               randomRecipes={this.state.randomRecipes}
             />
           </Route>
-          <Route exact path="/home">
+          <Route exact path="/">
             <SearchBar searchQuery={this.searchQuery} />
             <Home randomRecipes={this.state.randomRecipes}/>
           </Route>

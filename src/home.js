@@ -25,19 +25,20 @@ function Home(props) {
         <div id="delivery-card">
           {/* <img src="https://images.pexels.com/photos/4391479/pexels-photo-4391479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""></img> */}
         </div>
-        <h1>Fast Delivery</h1>
-        <h1>7 Days a Week</h1>
+        <div id="home-section-three-h1-wrapper">
+          <h1>Fast Delivery</h1>
+          <h1>7 Days a Week</h1>
+        </div>
       </div>
       <div className="home-section" id="home-section-four">
         <div>
           <h1 className="border-bottom">Location</h1>
           <p>47 Poplar Lane</p>
+          <p>Pellington, Vermont</p>
+          <p>765 54</p>
+
         </div>
-        <div>
-          <p>twitter</p>
-          <p>face face</p>
-          <p> instas</p>
-        </div>
+       
         <div>
           <h1 className="border-bottom">Contact</h1>
           <p>

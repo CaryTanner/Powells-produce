@@ -33,7 +33,7 @@ class IndividualRecipe extends React.Component {
         <img src={this.state.image} alt=""></img>
         <h2>{this.state.title}</h2>
         <h3>Ingredients</h3>
-        <ul>{this.state.ingredients}</ul>
+        <ul className="ingredient-list">{this.state.ingredients}</ul>
         <h3>Instructions</h3>
 
         <p>

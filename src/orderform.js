@@ -79,6 +79,7 @@ const OrderForm = (props) => {
         </div>
         <label htmlFor="deliveryDate">Delivery date:</label>
         <input
+         className="clickable"
           name="deliveryDate"
           onChange={props.orderFormChange}
           type="date"
@@ -87,7 +88,7 @@ const OrderForm = (props) => {
 
         {/* write an onclick- for button makes copy of cartItems and clears cartItems from state- copy sent as props to confirmation */}
         <Link to="/orderconfirmation">
-          <button onClick={props.submitOrder} id="order-form-submit-btn">
+          <button className="clickable" onClick={props.submitOrder} id="order-form-submit-btn">
             Order
           </button>
         </Link>
