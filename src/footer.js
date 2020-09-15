@@ -14,7 +14,7 @@ const Footer = () => {
           </a>
         </div>
 
-        <div className="footer-box">Location: 47 Poplar Street</div>
+        <div className="footer-box"><a href="https://resources.workable.com/stories-and-insights/eeo-equal-opportunity-employer">An Equal Opportunity Employer</a></div>
       </footer>
     </div>
   );
