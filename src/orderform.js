@@ -53,7 +53,7 @@ const OrderForm = (props) => {
           placeholder="Address"
           name="address"
         ></input>
-        <h3>Delivery Time(24h):</h3>
+        <h4>Delivery Time(24h):</h4>
         <div id="delivery-times">
           <label htmlFor="7-10">7-12</label>
           <input
@@ -77,7 +77,7 @@ const OrderForm = (props) => {
             value="16-20"
           ></input>
         </div>
-        <label htmlFor="deliveryDate">Delivery date:</label>
+        <h4><label htmlFor="deliveryDate">Delivery date:</label></h4>
         <input
          className="clickable"
           name="deliveryDate"

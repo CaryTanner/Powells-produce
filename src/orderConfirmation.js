@@ -3,7 +3,7 @@ import React from "react";
 const OrderConfirmation = (props) => {
   return (
     <div>
-      <h2>Thanks for ordering!</h2>
+      <h2 id="thanks-order">Thanks for ordering!</h2>
       <div id="order-confirmation">
         <div>
           <h3 className="border-bottom">Order Details</h3>

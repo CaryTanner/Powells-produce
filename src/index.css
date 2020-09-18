@@ -290,7 +290,13 @@ footer {
   margin: 0 0.5rem 0 0.1rem;
 }
 
+#order-form-container h3, #order-confirmation h3 {
+  font-size: 2rem;
+}
 
+#order-form input{
+  font-size: 1rem;
+}
 
 #order-confirmation h2,
 #order-confirmation h3,
@@ -302,6 +308,11 @@ footer {
   margin: 1rem auto;
   display: flex;
   justify-content: space-evenly;
+}
+
+#thanks-order{ 
+  margin: 1.5rem auto;
+  font-size: 3rem;
 }
 
 
