@@ -228,6 +228,9 @@ footer {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
 }
+#search-bar-input:focus{
+  outline: none;
+}
 
 #search-button {
   background-color: var(--off-grey);
@@ -314,8 +317,12 @@ footer {
   margin: 1.5rem auto;
   font-size: 3rem;
 }
-
-
+#order-form-explain{
+  margin: 2rem auto 0 auto;
+}
+#order-form-cart-list-container ul{
+  margin: 1rem auto 0 auto;
+} 
 
 /* -------------------- home sections ------------------- */
 
@@ -344,6 +351,9 @@ footer {
   
   font-size: 4rem;
   
+}
+#home-section-one h2{
+  margin: 15rem auto 1rem auto;
 }
 
 #home-section-two{

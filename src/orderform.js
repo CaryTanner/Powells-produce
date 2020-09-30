@@ -17,6 +17,19 @@ const OrderForm = (props) => {
           )}{" "}
           in your cart
         </h4>
+        <h4>
+          
+          {props.cartItems.length === 0 ? (<span>
+           <h2 id="order-form-explain"> Just 3 Easy Steps</h2>
+           <h4>1. Search for your favorite recipe</h4>
+           <h4>2. Place ingredients in your cart</h4>
+           <h4>3. Order for next day shipping!</h4>
+           </span>
+          ) : ( ""
+          )}
+        </h4>    
+
+
         <ul>
           {props.cartItems.map((item) => (
             <li cartItem={item}>

@@ -8,6 +8,11 @@ function Home(props) {
       <div className="home-section" id="home-section-one">
         <h1>Fresh Produce.</h1>
         <h1> Home to your door.</h1>
+
+        <h2>3 Easy Steps</h2>
+        <h4>1. Search for your favorite recipe</h4>
+        <h4>2. Place ingredients in your cart</h4>
+        <h4>3. Order for next day shipping!</h4>
       </div>
       <div className="home-section" id="home-section-two">
         {/* three random recipe cards and link to recipe section */}
