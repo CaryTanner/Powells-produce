@@ -154,7 +154,7 @@ class App extends React.Component {
               deliveryDate={this.state.deliveryDate}
             />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <SearchBar searchQuery={this.searchQuery} />
             <Home randomRecipes={this.state.randomRecipes}/>
           </Route>
