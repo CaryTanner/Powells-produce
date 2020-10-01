@@ -123,10 +123,7 @@ class App extends React.Component {
           </Route>
 
 
-          <Route path="/powells-produce/">
-            <SearchBar searchQuery={this.searchQuery} />
-            <Home randomRecipes={this.state.randomRecipes}/>
-          </Route>
+          
           <Route
             path="/recipes/:id"
             render={(props) => (
@@ -157,6 +154,11 @@ class App extends React.Component {
               deliveryDate={this.state.deliveryDate}
             />
           </Route>
+          <Route path="/">
+            <SearchBar searchQuery={this.searchQuery} />
+            <Home randomRecipes={this.state.randomRecipes}/>
+          </Route>
+          
           <Footer />
         </div>
       </Switch>
