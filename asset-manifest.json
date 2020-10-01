@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/carytanner.github.io/powells-produce/static/css/main.7e8c2c0b.chunk.css",
-    "main.js": "/carytanner.github.io/powells-produce/static/js/main.4cef39f2.chunk.js",
-    "main.js.map": "/carytanner.github.io/powells-produce/static/js/main.4cef39f2.chunk.js.map",
-    "runtime-main.js": "/carytanner.github.io/powells-produce/static/js/runtime-main.85bd9dd2.js",
-    "runtime-main.js.map": "/carytanner.github.io/powells-produce/static/js/runtime-main.85bd9dd2.js.map",
-    "static/js/2.95f074e0.chunk.js": "/carytanner.github.io/powells-produce/static/js/2.95f074e0.chunk.js",
-    "static/js/2.95f074e0.chunk.js.map": "/carytanner.github.io/powells-produce/static/js/2.95f074e0.chunk.js.map",
-    "index.html": "/carytanner.github.io/powells-produce/index.html",
-    "precache-manifest.95c4e57e241d5a727d793a70278f75f6.js": "/carytanner.github.io/powells-produce/precache-manifest.95c4e57e241d5a727d793a70278f75f6.js",
-    "service-worker.js": "/carytanner.github.io/powells-produce/service-worker.js",
-    "static/css/main.7e8c2c0b.chunk.css.map": "/carytanner.github.io/powells-produce/static/css/main.7e8c2c0b.chunk.css.map",
-    "static/js/2.95f074e0.chunk.js.LICENSE.txt": "/carytanner.github.io/powells-produce/static/js/2.95f074e0.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/carytanner.github.io/powells-produce/static/media/wheat.8da73152.jpeg"
+    "main.css": "/carytanner.com/powells-produce/static/css/main.5448426d.chunk.css",
+    "main.js": "/carytanner.com/powells-produce/static/js/main.4cef39f2.chunk.js",
+    "main.js.map": "/carytanner.com/powells-produce/static/js/main.4cef39f2.chunk.js.map",
+    "runtime-main.js": "/carytanner.com/powells-produce/static/js/runtime-main.a3f11e3b.js",
+    "runtime-main.js.map": "/carytanner.com/powells-produce/static/js/runtime-main.a3f11e3b.js.map",
+    "static/js/2.95f074e0.chunk.js": "/carytanner.com/powells-produce/static/js/2.95f074e0.chunk.js",
+    "static/js/2.95f074e0.chunk.js.map": "/carytanner.com/powells-produce/static/js/2.95f074e0.chunk.js.map",
+    "index.html": "/carytanner.com/powells-produce/index.html",
+    "precache-manifest.6686f3c763625f4b19faa4eed226906f.js": "/carytanner.com/powells-produce/precache-manifest.6686f3c763625f4b19faa4eed226906f.js",
+    "service-worker.js": "/carytanner.com/powells-produce/service-worker.js",
+    "static/css/main.5448426d.chunk.css.map": "/carytanner.com/powells-produce/static/css/main.5448426d.chunk.css.map",
+    "static/js/2.95f074e0.chunk.js.LICENSE.txt": "/carytanner.com/powells-produce/static/js/2.95f074e0.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/carytanner.com/powells-produce/static/media/wheat.8da73152.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.85bd9dd2.js",
+    "static/js/runtime-main.a3f11e3b.js",
     "static/js/2.95f074e0.chunk.js",
-    "static/css/main.7e8c2c0b.chunk.css",
+    "static/css/main.5448426d.chunk.css",
     "static/js/main.4cef39f2.chunk.js"
   ]
 }
