@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/powells-produce/static/css/main.68ed57eb.chunk.css",
-    "main.js": "/powells-produce/static/js/main.af92e37f.chunk.js",
-    "main.js.map": "/powells-produce/static/js/main.af92e37f.chunk.js.map",
-    "runtime-main.js": "/powells-produce/static/js/runtime-main.99cdd9d6.js",
-    "runtime-main.js.map": "/powells-produce/static/js/runtime-main.99cdd9d6.js.map",
-    "static/js/2.95f074e0.chunk.js": "/powells-produce/static/js/2.95f074e0.chunk.js",
-    "static/js/2.95f074e0.chunk.js.map": "/powells-produce/static/js/2.95f074e0.chunk.js.map",
-    "index.html": "/powells-produce/index.html",
-    "precache-manifest.3e3b0c9e2448a2e69704ec21d417b220.js": "/powells-produce/precache-manifest.3e3b0c9e2448a2e69704ec21d417b220.js",
-    "service-worker.js": "/powells-produce/service-worker.js",
-    "static/css/main.68ed57eb.chunk.css.map": "/powells-produce/static/css/main.68ed57eb.chunk.css.map",
-    "static/js/2.95f074e0.chunk.js.LICENSE.txt": "/powells-produce/static/js/2.95f074e0.chunk.js.LICENSE.txt"
+    "main.css": "/carytanner.github.io/powells-produce/static/css/main.68ed57eb.chunk.css",
+    "main.js": "/carytanner.github.io/powells-produce/static/js/main.af92e37f.chunk.js",
+    "main.js.map": "/carytanner.github.io/powells-produce/static/js/main.af92e37f.chunk.js.map",
+    "runtime-main.js": "/carytanner.github.io/powells-produce/static/js/runtime-main.85bd9dd2.js",
+    "runtime-main.js.map": "/carytanner.github.io/powells-produce/static/js/runtime-main.85bd9dd2.js.map",
+    "static/js/2.95f074e0.chunk.js": "/carytanner.github.io/powells-produce/static/js/2.95f074e0.chunk.js",
+    "static/js/2.95f074e0.chunk.js.map": "/carytanner.github.io/powells-produce/static/js/2.95f074e0.chunk.js.map",
+    "index.html": "/carytanner.github.io/powells-produce/index.html",
+    "precache-manifest.f4a3fa36423c5b175857e09ad7e4f115.js": "/carytanner.github.io/powells-produce/precache-manifest.f4a3fa36423c5b175857e09ad7e4f115.js",
+    "service-worker.js": "/carytanner.github.io/powells-produce/service-worker.js",
+    "static/css/main.68ed57eb.chunk.css.map": "/carytanner.github.io/powells-produce/static/css/main.68ed57eb.chunk.css.map",
+    "static/js/2.95f074e0.chunk.js.LICENSE.txt": "/carytanner.github.io/powells-produce/static/js/2.95f074e0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.99cdd9d6.js",
+    "static/js/runtime-main.85bd9dd2.js",
     "static/js/2.95f074e0.chunk.js",
     "static/css/main.68ed57eb.chunk.css",
     "static/js/main.af92e37f.chunk.js"
