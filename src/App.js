@@ -9,7 +9,6 @@ import SearchBar from "./SearchBar.js";
 import IndividualRecipe from "./individualRecipe.js";
 import OrderConfirmation from "./orderConfirmation.js";
 import {
-  BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
@@ -124,7 +123,7 @@ class App extends React.Component {
           </Route>
 
 
-          <Route exact path="/">
+          <Route path="/">
             <SearchBar searchQuery={this.searchQuery} />
             <Home randomRecipes={this.state.randomRecipes}/>
           </Route>
