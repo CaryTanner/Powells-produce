@@ -332,8 +332,7 @@ footer {
   min-height: 600px;
   width: 95%;
   margin: 0 auto;
-  background-image:
-  url("https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-image: url("./images/field-corn.jpeg");
   background-attachment: fixed;
   background-position: top;
   background-repeat: no-repeat;
@@ -394,7 +393,7 @@ footer {
   width: 95%;
   margin: 0 auto;
   background-image:
-  url("https://images.pexels.com/photos/265216/pexels-photo-265216.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  url("./images/wheat.jpeg");
   background-attachment: fixed;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -420,7 +419,7 @@ footer {
   width:40%;
   height: 600px;
   background-image:
-  url("https://images.pexels.com/photos/4391479/pexels-photo-4391479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  url("./images/deliver.jpeg");
   /* background-attachment: fixed; */
   background-position: center;
   background-repeat: no-repeat;
