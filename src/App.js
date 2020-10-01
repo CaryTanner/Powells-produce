@@ -8,7 +8,11 @@ import OrderForm from "./orderform.js";
 import SearchBar from "./SearchBar.js";
 import IndividualRecipe from "./individualRecipe.js";
 import OrderConfirmation from "./orderConfirmation.js";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
@@ -106,7 +110,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
+      <Switch>
         <div className="App">
           <Header cartItems={this.state.cartItems} />
 
@@ -119,7 +123,7 @@ class App extends React.Component {
             />
           </Route>
 
-          
+
           <Route exact path="/">
             <SearchBar searchQuery={this.searchQuery} />
             <Home randomRecipes={this.state.randomRecipes}/>
@@ -156,7 +160,7 @@ class App extends React.Component {
           </Route>
           <Footer />
         </div>
-      </Router>
+      </Switch>
     );
   }
 }
