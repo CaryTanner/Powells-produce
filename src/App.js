@@ -123,7 +123,7 @@ class App extends React.Component {
           </Route>
 
 
-          <Route path="/">
+          <Route path="/powells-produce/">
             <SearchBar searchQuery={this.searchQuery} />
             <Home randomRecipes={this.state.randomRecipes}/>
           </Route>
