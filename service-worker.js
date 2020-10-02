@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/carytanner.github.io/powells-produce/precache-manifest.43bf5006a8084b7170a3fff3f1dd701e.js"
+  "/carytanner.github.io/powells-produce/precache-manifest.73df6a0cae3fadb86fbf11aace7ae1ac.js"
 );
 
 self.addEventListener('message', (event) => {
