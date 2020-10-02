@@ -20,12 +20,12 @@ Features
 Contribute
 ----------
 
-- Please feel free to come with ideas and feedback
+- Please feel free to come with ideas and feedback!
 
 API
 -------
 
-A quick note on the API key visible in this project, I have chosen not to hide it as an enviroment variable as I don't want to include some kind of backend both for hosting purposes via Github pages and because it's just not part of the scope of this project. 
+A quick note on the API key visible in this project, I have let it remain visible as I don't want to include some kind of backend both for hosting purposes via Github pages and because it's just not part of the scope of this project. 
 
 License
 -------
