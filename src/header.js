@@ -17,10 +17,10 @@ const Header = (props) => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="recipes">Recipes</Link>
+            <Link to="/recipes">Recipes</Link>
           </li>
           <li>
-            <Link to="order">Order</Link>
+            <Link exact to="/order">Order</Link>
           </li>
         </ul>
         <ShoppingCart cartItems={props.cartItems} />

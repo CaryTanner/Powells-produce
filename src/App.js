@@ -9,6 +9,7 @@ import SearchBar from "./SearchBar.js";
 import IndividualRecipe from "./individualRecipe.js";
 import OrderConfirmation from "./orderConfirmation.js";
 import {
+  Redirect,
   Switch,
   Route
 } from "react-router-dom";
@@ -108,12 +109,13 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(process.env.REACT_APP_API_KEY)
+    
     return (
       <Switch>
         <div className="App">
           <Header cartItems={this.state.cartItems} />
 
+          
           <Route exact path="/recipes">
             <SearchBar searchQuery={this.searchQuery} />
             <Recipes
@@ -137,7 +139,9 @@ class App extends React.Component {
               </div>
             )}
           />
+          
           <Route exact path="/order">
+            
             <OrderForm
               submitOrder={this.submitOrder}
               removeItemFromCart={this.removeItemFromCart}
