@@ -1,9 +1,11 @@
+//key is visible- none critical key/secret
 
-let apiKey = process.env.REACT_APP_API_KEY
+let apiKey = "3148ca352fb14c20b9d3e9ac0d57b7b7"
 
 
 
 export const fetchRecipes = (searchTerm) => {
+  console.log(apiKey)
   const url =
     "https://api.spoonacular.com/recipes/complexSearch?apiKey=" +
     apiKey +

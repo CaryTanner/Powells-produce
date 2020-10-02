@@ -108,6 +108,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(process.env.REACT_APP_API_KEY)
     return (
       <Switch>
         <div className="App">
