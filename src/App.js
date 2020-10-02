@@ -113,7 +113,7 @@ class App extends React.Component {
         <div className="App">
           <Header cartItems={this.state.cartItems} />
 
-          <Route exact path="recipes">
+          <Route exact path="/recipes">
             <SearchBar searchQuery={this.searchQuery} />
             <Recipes
               recipes={this.state.recipes}
@@ -125,7 +125,7 @@ class App extends React.Component {
 
           
           <Route
-            path="recipes/:id"
+            path="/recipes/:id"
             render={(props) => (
               <div>
                 <SearchBar searchQuery={this.searchQuery} />
@@ -136,7 +136,7 @@ class App extends React.Component {
               </div>
             )}
           />
-          <Route exact path="order">
+          <Route exact path="/order">
             <OrderForm
               submitOrder={this.submitOrder}
               removeItemFromCart={this.removeItemFromCart}
@@ -144,7 +144,7 @@ class App extends React.Component {
               cartItems={this.state.cartItems}
             />
           </Route>
-          <Route exact path="orderconfirmation">
+          <Route exact path="/orderconfirmation">
             <OrderConfirmation
               orderedItems={this.state.orderedItems}
               firstName={this.state.firstName}
