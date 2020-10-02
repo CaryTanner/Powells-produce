@@ -126,7 +126,7 @@ class App extends React.Component {
 
           
           <Route
-            path="/:id"
+            path="/recipes/:id"
             render={(props) => (
               <div>
                 <SearchBar searchQuery={this.searchQuery} />
