@@ -33,7 +33,7 @@ body {
 header {
   margin: 0.5rem auto;
   width: 95%;
-  background-image: url("https://images.pexels.com/photos/319798/pexels-photo-319798.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-image: url("./images/groceries.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -96,9 +96,11 @@ footer {
 }
 
 .recipe-card {
-  /* border: 2px solid black; */
+  
   border-radius: 5px;
-  background-color: var(--off-grey);
+  /* background-color: var(--off-grey); */
+  background-color: rgba(170, 190, 120, 0.4);
+  
   padding: 10px;
   margin: 10px;
   display: flex;
@@ -136,10 +138,11 @@ footer {
 }
 
 .individual-recipe p {
+  padding: 15px;
   text-align: justify;
   line-height: 25px;
   margin: 1rem auto;
-  width: 60ch;
+  max-width: 70ch;
 }
 
 /* -------Shopping cart icon & main------ */
