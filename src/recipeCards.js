@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 
 export const recipeCards = (recipe) => {
-    return (<Link to={'/' + recipe.id} >
+    return (<Link to={'/recipes/' + recipe.id} >
         <div className="recipe-card" data-recipeid={recipe.id}>
         <img  src={recipe.image} alt=""></img>
         
