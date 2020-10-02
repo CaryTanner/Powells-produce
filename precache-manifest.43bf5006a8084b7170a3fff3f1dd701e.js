@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7575c38bfd8063465e00758891f552e5",
+    "revision": "322850115d6dfb7b8d8520bff38e73a0",
     "url": "/carytanner.github.io/powells-produce/index.html"
   },
   {
-    "revision": "fa94de31a90ab0911a82",
-    "url": "/carytanner.github.io/powells-produce/static/css/main.3332a7b0.chunk.css"
+    "revision": "b0a4e9229bd6c54b067b",
+    "url": "/carytanner.github.io/powells-produce/static/css/main.6a1a3014.chunk.css"
   },
   {
     "revision": "a0700bf0f3d631f2a393",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/carytanner.github.io/powells-produce/static/js/2.ee678c6a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fa94de31a90ab0911a82",
+    "revision": "b0a4e9229bd6c54b067b",
     "url": "/carytanner.github.io/powells-produce/static/js/main.574b681e.chunk.js"
   },
   {

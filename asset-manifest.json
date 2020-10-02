@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/carytanner.github.io/powells-produce/static/css/main.3332a7b0.chunk.css",
+    "main.css": "/carytanner.github.io/powells-produce/static/css/main.6a1a3014.chunk.css",
     "main.js": "/carytanner.github.io/powells-produce/static/js/main.574b681e.chunk.js",
     "main.js.map": "/carytanner.github.io/powells-produce/static/js/main.574b681e.chunk.js.map",
     "runtime-main.js": "/carytanner.github.io/powells-produce/static/js/runtime-main.85bd9dd2.js",
@@ -8,16 +8,16 @@
     "static/js/2.ee678c6a.chunk.js": "/carytanner.github.io/powells-produce/static/js/2.ee678c6a.chunk.js",
     "static/js/2.ee678c6a.chunk.js.map": "/carytanner.github.io/powells-produce/static/js/2.ee678c6a.chunk.js.map",
     "index.html": "/carytanner.github.io/powells-produce/index.html",
-    "precache-manifest.d02158f9a3d13ff8f8e44dfc3bae53fb.js": "/carytanner.github.io/powells-produce/precache-manifest.d02158f9a3d13ff8f8e44dfc3bae53fb.js",
+    "precache-manifest.43bf5006a8084b7170a3fff3f1dd701e.js": "/carytanner.github.io/powells-produce/precache-manifest.43bf5006a8084b7170a3fff3f1dd701e.js",
     "service-worker.js": "/carytanner.github.io/powells-produce/service-worker.js",
-    "static/css/main.3332a7b0.chunk.css.map": "/carytanner.github.io/powells-produce/static/css/main.3332a7b0.chunk.css.map",
+    "static/css/main.6a1a3014.chunk.css.map": "/carytanner.github.io/powells-produce/static/css/main.6a1a3014.chunk.css.map",
     "static/js/2.ee678c6a.chunk.js.LICENSE.txt": "/carytanner.github.io/powells-produce/static/js/2.ee678c6a.chunk.js.LICENSE.txt",
     "static/media/index.css": "/carytanner.github.io/powells-produce/static/media/wheat.8da73152.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.85bd9dd2.js",
     "static/js/2.ee678c6a.chunk.js",
-    "static/css/main.3332a7b0.chunk.css",
+    "static/css/main.6a1a3014.chunk.css",
     "static/js/main.574b681e.chunk.js"
   ]
 }
