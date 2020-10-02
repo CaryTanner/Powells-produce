@@ -1,6 +1,7 @@
-// let apiKey = '6d5d968c97a94abdb1aded627bc8c45a'
-// a74e3a4f3a0a408fa7554575d0abcd05
-let apiKey = "a74e3a4f3a0a408fa7554575d0abcd05";
+
+let apiKey = process.env.REACT_APP_API_KEY
+
+
 
 export const fetchRecipes = (searchTerm) => {
   const url =
