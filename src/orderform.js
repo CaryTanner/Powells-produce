@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import OrderFormValidated from "./OrderFormValidated";
 
 const OrderForm = (props) => {
+  const msPerDay = 86400000;
+  const maxDate = new Date().getTime() + (31 * msPerDay)
+  const maxDeliveryDate = new Date(maxDate).toISOString().split("T")[0];
   const today = new Date().toISOString().split("T")[0];
 
   return (
@@ -47,64 +51,17 @@ const OrderForm = (props) => {
         </ul>
       </div>
       <div id="order-form">
+        
         <h3 className="border-bottom">Place your order below</h3>
-        <input
-          type="text"
-          onChange={props.orderFormChange}
-          placeholder="First Name"
-          name="firstName"
-        ></input>
-        <input
-          type="text"
-          onChange={props.orderFormChange}
-          placeholder="Last Name"
-          name="lastName"
-        ></input>
-        <input
-          type="text"
-          onChange={props.orderFormChange}
-          placeholder="Address"
-          name="address"
-        ></input>
-        <h4>Delivery Time(24h):</h4>
-        <div id="delivery-times">
-          <label htmlFor="7-10">7-12</label>
-          <input
-            name="deliveryTime"
-            onChange={props.orderFormChange}
-            type="radio"
-            value="7-12"
-          ></input>
-          <label htmlFor="10-14">12-16</label>
-          <input
-            name="deliveryTime"
-            onChange={props.orderFormChange}
-            type="radio"
-            value="12-16"
-          ></input>
-          <label htmlFor="14-19">16-20</label>
-          <input
-            name="deliveryTime"
-            onChange={props.orderFormChange}
-            type="radio"
-            value="16-20"
-          ></input>
-        </div>
-        <h4><label htmlFor="deliveryDate">Delivery date:</label></h4>
-        <input
-         className="clickable"
-          name="deliveryDate"
-          onChange={props.orderFormChange}
-          type="date"
-          min={today}
-        ></input>
-
+       <OrderFormValidated submitOrder={props.submitOrder} />
+        
         {/* write an onclick- for button makes copy of cartItems and clears cartItems from state- copy sent as props to confirmation */}
         <Link to="/orderconfirmation">
           <button className="clickable" onClick={props.submitOrder} id="order-form-submit-btn">
             Order
           </button>
-        </Link>
+        </Link> 
+         
       </div>
     </div>
   );

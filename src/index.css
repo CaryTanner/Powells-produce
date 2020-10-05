@@ -274,7 +274,9 @@ footer {
   justify-content: space-around;
   flex-direction: column;
 }
-#order-form button {
+#submit-button {
+  width: 60%;
+  align-self: center;
   background-color: var(--off-grey);
   padding: 6px 30px;
   border: 1px solid black;
@@ -284,6 +286,7 @@ footer {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
 }
+
 #order-form button:hover{
   background-color: rgb(75, 75, 75);
   color: white;
@@ -293,7 +296,7 @@ footer {
   display: inline-block;
 }
 #delivery-times input {
-  margin: 0 0.5rem 0 0.1rem;
+  margin: 0 0.1rem 0 0.5rem;
 }
 
 #order-form-container h3, #order-confirmation h3 {
@@ -302,6 +305,15 @@ footer {
 
 #order-form input{
   font-size: 1rem;
+}
+.error{
+  margin: -0.8rem 0 -0.5rem 0;
+  text-align: left;
+  font-size: 14px;
+  color: red;
+}
+#error-radio{
+  text-align: center;
 }
 
 #order-confirmation h2,
@@ -488,6 +500,12 @@ footer {
 
   #order-form button {
     padding: 6px 75px;
+  }
+  .error{
+    margin: .5rem 0 .5rem 0;
+    text-align: left;
+    font-size: 20px;
+    color: red;
   }
 
   
