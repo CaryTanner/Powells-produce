@@ -3,11 +3,7 @@ import OrderFormValidated from "./OrderFormValidated";
 import OrderConfirmation from './OrderConfirmation'
 
 const OrderForm = (props) => {
-  const msPerDay = 86400000;
-  const maxDate = new Date().getTime() + (31 * msPerDay)
-  const maxDeliveryDate = new Date(maxDate).toISOString().split("T")[0];
-  const today = new Date().toISOString().split("T")[0];
-
+  
   return (
     <div>
       {props.isOrderSubmitted && <OrderConfirmation
