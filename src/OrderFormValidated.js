@@ -1,7 +1,6 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { prependOnceListener } from "npm";
 
 const msPerDay = 86400000;
 const firstDeliveryDate = new Date().getTime() + msPerDay;
@@ -33,12 +32,17 @@ const OrderFormValidated = (props) => {
           .required("Required"),
         deliveryTime: Yup.string().required("Required"),
         deliveryDate: Yup.string().required("Required"),
+        cartItems: Yup.number().min(5, "There are no items in your order")
       })}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values, actions) => {
+        if (props.cartItems.length === 0){
+          alert('There are no items in your order')
+          return
+        }
         setTimeout(() => {
-          console.log(JSON.stringify(values, null, 2));
-          // this.props.submitOrder();
-          setSubmitting(false);
+          props.submitOrder(values);
+          actions.resetForm();
+          actions.setSubmitting(false);
         }, 400);
       }}
     >
@@ -120,7 +124,7 @@ const OrderFormValidated = (props) => {
             max={maxDeliveryDate}
           />
           <ErrorMessage render={msg => <div className="error">{msg}</div>} name="deliveryDate" />
-
+          
           <button id="submit-button" type="submit">
             Submit
           </button>

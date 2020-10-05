@@ -4,12 +4,10 @@ import Footer from "./footer.js";
 import Recipes from "./recipes.js";
 import { fetchRecipes, fetchRandomRecipe } from "./api.js";
 import Home from "./home.js";
-import OrderForm from "./orderform.js";
+import OrderForm from "./Orderform.js";
 import SearchBar from "./SearchBar.js";
 import IndividualRecipe from "./individualRecipe.js";
-import OrderConfirmation from "./orderConfirmation.js";
 import {
-  Redirect,
   Switch,
   Route
 } from "react-router-dom";
@@ -27,9 +25,9 @@ class App extends React.Component {
       recipes: "",
       cartItems: [],
       cartItemsIds: [],
+      isOrderSubmitted: false
     };
     this.searchQuery = this.searchQuery.bind(this);
-    this.orderFormChange = this.orderFormChange.bind(this);
     this.submitOrder = this.submitOrder.bind(this);
     this.addItemToCart = this.addItemToCart.bind(this);
     this.removeItemFromCart = this.removeItemFromCart.bind(this);
@@ -69,6 +67,7 @@ class App extends React.Component {
     this.setState((state) => ({
       cartItems: [...this.state.cartItems, item],
       cartItemsIds: [...this.state.cartItemsIds, itemId],
+      isOrderSubmitted: false
     }));
   }
 
@@ -87,17 +86,18 @@ class App extends React.Component {
     }));
   }
 
-  orderFormChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
 
   //make array of items to show on order confirmation and clear shopping cart
-  submitOrder() {
+  submitOrder(values) {
     let copyOrderedItems = [...this.state.cartItems];
     this.setState(() => ({
       cartItems: [],
       orderedItems: copyOrderedItems,
+      isOrderSubmitted: true,
+      values: values 
     }));
+    
+    
   }
 
   componentDidMount() {
@@ -145,20 +145,13 @@ class App extends React.Component {
             <OrderForm
               submitOrder={this.submitOrder}
               removeItemFromCart={this.removeItemFromCart}
-              orderFormChange={this.orderFormChange}
               cartItems={this.state.cartItems}
-            />
-          </Route>
-          <Route exact path="/orderconfirmation">
-            <OrderConfirmation
               orderedItems={this.state.orderedItems}
-              firstName={this.state.firstName}
-              lastName={this.state.lastName}
-              address={this.state.address}
-              deliveryTime={this.state.deliveryTime}
-              deliveryDate={this.state.deliveryDate}
+              values={this.state.values}
+              isOrderSubmitted={this.state.isOrderSubmitted}
             />
           </Route>
+          
           <Route exact path="/">
             <SearchBar searchQuery={this.searchQuery} />
             <Home randomRecipes={this.state.randomRecipes}/>

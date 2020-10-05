@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import OrderFormValidated from "./OrderFormValidated";
+import OrderConfirmation from './OrderConfirmation'
 
 const OrderForm = (props) => {
   const msPerDay = 86400000;
@@ -9,7 +9,17 @@ const OrderForm = (props) => {
   const today = new Date().toISOString().split("T")[0];
 
   return (
-    <div id="order-form-container">
+    <div>
+      {props.isOrderSubmitted && <OrderConfirmation
+  orderedItems={props.orderedItems}
+  firstName={props.values.firstName}
+  lastName={props.values.lastName}
+  email={props.values.email}
+  address={props.values.address}
+  deliveryTime={props.values.deliveryTime}
+  deliveryDate={props.values.deliveryDate}
+/>}
+   {!props.isOrderSubmitted && <div id="order-form-container">
       <div id="order-form-cart-list-container">
         <h3 className="border-bottom">Shopping Cart</h3>
         <h4>
@@ -43,8 +53,8 @@ const OrderForm = (props) => {
                 title="Remove Item"
                 onClick={props.removeItemFromCart}
               >
-                {" "}
-                x{" "}
+                {"    "}
+                &nbsp;&nbsp;&nbsp;x{" "}
               </span>
             </li>
           ))}
@@ -53,17 +63,16 @@ const OrderForm = (props) => {
       <div id="order-form">
         
         <h3 className="border-bottom">Place your order below</h3>
-       <OrderFormValidated submitOrder={props.submitOrder} />
+       <OrderFormValidated cartItems={props.cartItems} submitOrder={props.submitOrder} />
+       
         
-        {/* write an onclick- for button makes copy of cartItems and clears cartItems from state- copy sent as props to confirmation */}
-        <Link to="/orderconfirmation">
-          <button className="clickable" onClick={props.submitOrder} id="order-form-submit-btn">
-            Order
-          </button>
-        </Link> 
          
       </div>
-    </div>
+      
+    </div>}
+
+
+</div>
   );
 };
 

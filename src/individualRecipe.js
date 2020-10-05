@@ -27,7 +27,7 @@ class IndividualRecipe extends React.Component {
   }
 
   render() {
-    console.log(this.state.instructions);
+    
     return (
       <div class="individual-recipe">
         <img src={this.state.image} alt=""></img>
