@@ -13,7 +13,7 @@ const Recipes = (props) => {
       <div>
         <h2>Recipes</h2>
         <div className="display-recipe">
-          {props.recipes.results.map(recipeCards)}
+          {props.recipes.results && props.recipes.results.map(recipeCards)}
         </div>
       </div>
     );
