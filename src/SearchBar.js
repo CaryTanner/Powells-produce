@@ -28,7 +28,40 @@ const SearchBar = (props) => {
     window.addEventListener("click", clickOutsideSearch);
     return () => window.removeEventListener("click", clickOutsideSearch);
   });
-
+//if statement protects againts running out of apiKey quota
+  if(props.randomRecipes === undefined  || props.randomRecipes.code === 401){
+    
+    return(
+<div id="search-bar-container">
+      <div>
+        <input
+          ref={searchInputField}
+          id="search-bar-input"
+          data-searchquery={searchQuery}
+          //--keydown doesn't redirect to recipes page from other??
+          onKeyDown={(event) =>
+            event.code === 13 ? props.searchQuery(event) : ""
+          }
+          onChange={() => {
+            setSearchQuery(document.querySelector("#search-bar-input").value);
+          }}
+          type="text"
+          placeholder=" &#128269; Get inspired by 1000's of recipes..."
+        />
+      </div>
+      <Link to="/recipes">
+        <button
+          className="clickable"
+          id="search-button"
+          data-searchquery={searchQuery}
+          onClick={props.searchQuery}
+        >
+          Search
+        </button>
+      </Link>
+    </div>
+    )
+  } else {
   return (
     <div id="search-bar-container">
       <div>
@@ -69,6 +102,7 @@ const SearchBar = (props) => {
       </Link>
     </div>
   );
+ }
 };
 
 export default SearchBar;

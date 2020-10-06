@@ -117,7 +117,7 @@ class App extends React.Component {
 
           
           <Route exact path="/recipes">
-            <SearchBar searchQuery={this.searchQuery} />
+            <SearchBar searchQuery={this.searchQuery} randomRecipes={this.state.randomRecipes}  />
             <Recipes
               recipes={this.state.recipes}
               recipeSearchQuery={this.state.recipeSearchQuery}
@@ -131,7 +131,8 @@ class App extends React.Component {
             path="/recipes/:id"
             render={(props) => (
               <div>
-                <SearchBar searchQuery={this.searchQuery} />
+                {/* SearchBar gets randomRecipes prop as test for API functioning- doesn't break site if apiKey quota is used */}
+                <SearchBar searchQuery={this.searchQuery} randomRecipes={this.state.randomRecipes} />
                 <IndividualRecipe
                   {...props}
                   addItemToCart={this.addItemToCart}
@@ -153,7 +154,7 @@ class App extends React.Component {
           </Route>
           
           <Route exact path="/">
-            <SearchBar searchQuery={this.searchQuery} />
+            <SearchBar searchQuery={this.searchQuery} randomRecipes={this.state.randomRecipes}  />
             <Home randomRecipes={this.state.randomRecipes}/>
           </Route>
           

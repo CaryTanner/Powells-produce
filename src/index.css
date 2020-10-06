@@ -387,6 +387,9 @@ footer {
 #home-section-two h1{
   margin-bottom: 2rem;
 }
+.sorry-text{
+  margin: 12rem auto;
+}
 
 #home-section-two button{
   height: 40px;
