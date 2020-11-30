@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-:root{
+:root {
   --off-black: rgb(34, 34, 34);
-  --off-grey: rgb(220, 220, 220)
+  --off-grey: rgb(220, 220, 220);
 }
-
 
 * {
   margin: 0;
@@ -96,21 +95,25 @@ footer {
 }
 
 .recipe-card {
-  
   border-radius: 5px;
-  /* background-color: var(--off-grey); */
-  background-color: rgb(217,230,200);
-  
+  /*background-color: var(--off-grey);
+  */
+  background-color: rgb(255, 255, 255);
   padding: 10px;
   margin: 10px;
   display: flex;
   flex-direction: column;
-
-  transition: 300ms;
+  transition: 500ms;
   width: 250px;
   height: 300px;
   overflow-y: hidden;
   cursor: pointer;
+  filter: drop-shadow(1px 1px 2px black);
+  -webkit-filter: drop-shadow(1px 1px 2px black);
+  -webkit-transition: 500ms;
+  -moz-transition: 500ms;
+  -ms-transition: 500ms;
+  -o-transition: 500ms;
 }
 .recipe-card img {
   width: 200px;
@@ -121,8 +124,8 @@ footer {
   margin: 1rem 0;
 }
 .recipe-card:hover {
-  filter: brightness(.8);
-  -webkit-filter: brightness(.8);
+  filter: brightness(0.8);
+  -webkit-filter: brightness(0.8);
 }
 
 .ingredient-list li {
@@ -211,7 +214,7 @@ footer {
   padding: 3px;
   font-size: 1rem;
 }
-#autoComplete-ul li:hover{
+#autoComplete-ul li:hover {
   background-color: var(--off-grey);
 }
 
@@ -231,7 +234,7 @@ footer {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
 }
-#search-bar-input:focus{
+#search-bar-input:focus {
   outline: none;
 }
 
@@ -255,7 +258,7 @@ footer {
   -o-transition: 200ms;
 }
 
-#search-button:hover{
+#search-button:hover {
   color: white;
   background-color: rgb(75, 75, 75);
 }
@@ -280,14 +283,14 @@ footer {
   background-color: var(--off-grey);
   padding: 6px 30px;
   border: 1px solid black;
-  border-radius: 3px;;
+  border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
 }
 
-#order-form button:hover{
+#order-form button:hover {
   background-color: rgb(75, 75, 75);
   color: white;
 }
@@ -299,23 +302,23 @@ footer {
   margin: 0 0.1rem 0 0.5rem;
 }
 
-#order-form-container h3, #order-confirmation h3 {
+#order-form-container h3,
+#order-confirmation h3 {
   font-size: 2rem;
 }
 
-#order-form input{
+#order-form input {
   font-size: 1rem;
 }
-.error{
+.error {
   margin: -0.8rem 0 -0.5rem 0;
   text-align: left;
   font-size: 14px;
   color: red;
 }
-#error-radio{
+#error-radio {
   text-align: center;
 }
-
 
 #order-confirmation h2,
 #order-confirmation h3,
@@ -329,25 +332,23 @@ footer {
   justify-content: space-evenly;
 }
 
-#thanks-order{ 
+#thanks-order {
   margin: 1.5rem auto;
   font-size: 3rem;
 }
-#order-form-explain{
+#order-form-explain {
   margin: 2rem auto 0 auto;
 }
-#order-form-cart-list-container ul{
+#order-form-cart-list-container ul {
   margin: 1rem auto 0 auto;
-} 
+}
 
-#still-curious-text{
+#still-curious-text {
   margin: 4rem auto 3rem auto;
-  text-decoration: underline ;
+  text-decoration: underline;
 }
 
 /* -------------------- home sections ------------------- */
-
-
 
 #home-section-one {
   min-height: 600px;
@@ -358,40 +359,37 @@ footer {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 5px ;
-  -webkit-border-radius: 5px ;
-  -moz-border-radius: 5px ;
-  -ms-border-radius: 5px ;
-  -o-border-radius: 5px ;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 #home-section-one h1 {
   position: relative;
   top: 100px;
-  
+
   font-size: 4rem;
-  
 }
-#home-section-one h2{
+#home-section-one h2 {
   margin: 15rem auto 1rem auto;
-  
 }
 
-
-#home-section-two{
+#home-section-two {
   min-height: 450px;
   width: 95%;
   margin: 3rem auto;
   padding: 1rem;
 }
-#home-section-two h1{
+#home-section-two h1 {
   margin-bottom: 2rem;
 }
-.sorry-text{
+.sorry-text {
   margin: 12rem auto;
 }
 
-#home-section-two button{
+#home-section-two button {
   height: 40px;
   width: 150px;
   margin-top: 2rem;
@@ -411,7 +409,7 @@ footer {
   font-family: "Lato", sans-serif;
 }
 
-#home-section-two button:hover{
+#home-section-two button:hover {
   background-color: rgb(75, 75, 75);
   color: white;
 }
@@ -420,8 +418,7 @@ footer {
   min-height: 600px;
   width: 95%;
   margin: 0 auto;
-  background-image:
-  url("./images/wheat.jpeg");
+  background-image: url("./images/wheat.jpeg");
   background-attachment: fixed;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -432,22 +429,20 @@ footer {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   display: flex;
-  
+
   align-items: center;
-  
 }
 #home-section-three h1 {
   font-size: 4rem;
 }
-#home-section-three-h1-wrapper{
+#home-section-three-h1-wrapper {
   margin: 0 auto;
 }
 
 #delivery-card {
-  width:40%;
+  width: 40%;
   height: 600px;
-  background-image:
-  url("./images/deliver.jpeg");
+  background-image: url("./images/deliver.jpeg");
   /* background-attachment: fixed; */
   background-position: center;
   background-repeat: no-repeat;
@@ -463,19 +458,18 @@ footer {
 }
 
 @media (max-width: 700px) {
-  header h1{
+  header h1 {
     font-size: 4rem;
   }
   nav {
     flex-direction: column;
     margin-bottom: 1rem;
   }
-  
- 
+
   footer {
     font-size: 0.5rem;
   }
- 
+
   .main-shopping-cart {
     margin: 0.5rem auto;
     width: 50%;
@@ -500,53 +494,48 @@ footer {
   }
   #delivery-times input {
     margin: 0 1rem;
-    transform: scale(2)  ;
-    -webkit-transform: scale(2)  ;
-    -moz-transform: scale(2)  ;
-    -ms-transform: scale(2)  ;
-    -o-transform: scale(2)  ;
-}
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+  }
 
   #order-form button {
     padding: 6px 75px;
   }
-  .error{
-    margin: .5rem 0 .5rem 0;
+  .error {
+    margin: 0.5rem 0 0.5rem 0;
     text-align: left;
     font-size: 20px;
     color: red;
   }
 
-  
   #order-confirmation {
     flex-direction: column;
   }
 
-  #delivery-card{
+  #delivery-card {
     width: 100%;
     height: 500px;
   }
   #home-section-one h1 {
     position: relative;
     top: 100px;
-    
-    font-size: 3rem;
-    
-  }
 
- 
+    font-size: 3rem;
+  }
 
   #home-section-three h1 {
     font-size: 3rem;
-    
   }
-  #home-section-three-h1-wrapper{
+  #home-section-three-h1-wrapper {
     margin: 4rem auto;
   }
-  #home-section-three{
+  #home-section-three {
     flex-direction: column-reverse;
   }
-  #home-section-four{
+  #home-section-four {
     flex-direction: column;
   }
 }
