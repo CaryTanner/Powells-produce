@@ -97,8 +97,7 @@ footer {
 .recipe-card {
   border-radius: 5px;
   /*background-color: var(--off-grey);
-  */
-  background-color: rgb(255, 255, 255);
+  */background-color: rgb(255, 255, 255);
   padding: 10px;
   margin: 10px;
   display: flex;
@@ -108,12 +107,8 @@ footer {
   height: 300px;
   overflow-y: hidden;
   cursor: pointer;
-  filter: drop-shadow(1px 1px 2px black);
-  -webkit-filter: drop-shadow(1px 1px 2px black);
-  -webkit-transition: 500ms;
-  -moz-transition: 500ms;
-  -ms-transition: 500ms;
-  -o-transition: 500ms;
+  box-shadow: 2px 2px 5px rgba(0,0,0, .25)
+ 
 }
 .recipe-card img {
   width: 200px;
