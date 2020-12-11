@@ -8,7 +8,7 @@ export const ingredientList = (ing, clickFunc) => (
     key={ing.name}
   >
     {ing.name.charAt(0).toUpperCase() + ing.name.slice(1)}
-    {Math.ceil(ing.measures.metric.amount)} {ing.measures.metric.unitShort}
+    {" " + Math.ceil(ing.measures.metric.amount)} {ing.measures.metric.unitShort}
     <span title="Add to Cart" class="shopping-cart-icon" onClick={clickFunc}>
       <FontAwesomeIcon icon="shopping-cart" />
     </span>
