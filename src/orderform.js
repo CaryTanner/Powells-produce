@@ -2,7 +2,7 @@ import React from "react";
 import OrderFormValidated from "./OrderFormValidated";
 import OrderConfirmation from './OrderConfirmation'
 
-const OrderForm = (props) => {
+const OrderFormLanding = (props) => {
   
   return (
     <div>
@@ -72,4 +72,4 @@ const OrderForm = (props) => {
   );
 };
 
-export default OrderForm;
+export default OrderFormLanding;

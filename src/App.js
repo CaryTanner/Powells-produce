@@ -4,7 +4,7 @@ import Footer from "./footer.js";
 import Recipes from "./recipes.js";
 import { fetchRecipes, fetchRandomRecipe } from "./api.js";
 import Home from "./home.js";
-import OrderForm from "./Orderform.js";
+import OrderFormLanding from "./OrderformLanding.js";
 import SearchBar from "./SearchBar.js";
 import IndividualRecipe from "./individualRecipe.js";
 import {
@@ -143,7 +143,7 @@ class App extends React.Component {
           
           <Route exact path="/order">
             
-            <OrderForm
+            <OrderFormLanding
               submitOrder={this.submitOrder}
               removeItemFromCart={this.removeItemFromCart}
               cartItems={this.state.cartItems}
